@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  .aboutMe {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .position {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color4);
+  }
+
+  .name {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--color3);
+  }
+
+  .navigation {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menuItem {
+      cursor: pointer;
+      font-size: 18px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: var(--color4);
+        transition: color 0.3s ease-in-out;
+      }
+    }
+  }
+}
