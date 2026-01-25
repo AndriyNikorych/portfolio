@@ -8,7 +8,6 @@ const repo = "portfolio";
 const nextConfig: NextConfig = {
 	output: "export",
 	basePath: `/${repo}`,
-	assetPrefix: `/${repo}/`,
 	images: { unoptimized: true },
 	turbopack: {
 		rules: {
