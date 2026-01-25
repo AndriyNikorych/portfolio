@@ -1,55 +1,62 @@
 .header {
-  width: 100%;
-  box-shadow: 0 0 8px 0 var(--color2);
+  width: calc(100% - 20px);
   display: flex;
   justify-content: center;
-  background: var(--color2);
+  text-transform: uppercase;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
 
   .headerContent {
     width: 100%;
     display: flex;
-    padding: 20px;
     justify-content: space-between;
     align-items: center;
   }
-
-  .aboutMe {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .folderIcon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .portfolio {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color3);
-  }
-
 
   .navigation {
     height: 100%;
     display: flex;
     align-items: center;
-    padding-right: 30px;
+    color: var(--color4);
 
     .menu {
       display: flex;
-      gap: 15px;
+      align-items: center;
+      gap: 20px;
     }
 
     .menuItem {
       cursor: pointer;
       font-size: 16px;
+      font-size: clamp(16px, calc(var(--i) * 20px), 18px);
+      font-weight: 700;
 
       &:hover {
-        color: var(--color7);
-        transition: color 0.3s ease-in-out;
+        color: var(--color3);
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+        color: var(--color4);
+
+        &:hover {
+          color: var(--color3);
+          transform: scale(1.1);
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
   }
+
+  .settings {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 }
+

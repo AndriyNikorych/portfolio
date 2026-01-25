@@ -1,5 +1,5 @@
 import cn from "classnames";
-import css from "@css/pages/home.module.scss";
+import css from "@css/pages/oldHome.module.scss";
 
 const text = [
 	"Online Platform with Mini Games: Developed a dynamic platform featuring interactive mini-games",

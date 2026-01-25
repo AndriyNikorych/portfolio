@@ -1,4 +1,4 @@
-import css from "@css/pages/home.module.scss";
+import css from "@css/pages/oldHome.module.scss";
 
 type CodeDivType = {
 	el: string;

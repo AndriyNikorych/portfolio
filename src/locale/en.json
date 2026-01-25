@@ -1,0 +1,15 @@
+{
+	"home": {
+		"title": "Andrii Nikorych",
+		"description1": "Hello, I’m a Front-End Developer with {years} years of commercial experience in delivering production-ready React applications.",
+		"description2": "I am passionate about UI/UX excellence and performance—specializing in scalable component systems, theming, and crafting fluid, animation-rich interfaces."
+	},
+	"navigation": {
+		"home": "Home",
+		"about": "About",
+		"skills": "Skills",
+		"projects": "Projects",
+		"contacts": "Contacts",
+		"selectLang": "Select language"
+	}
+}

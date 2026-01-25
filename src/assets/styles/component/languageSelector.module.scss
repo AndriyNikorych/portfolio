@@ -1,0 +1,90 @@
+.languageSelector {
+  position: relative;
+
+  .button {
+    border-radius: 16px;
+    border: 2px solid var(--color4);
+    padding: 10px 12px;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color4);
+    backdrop-filter: blur(10px);
+    z-index: 11;
+  }
+
+  .icon {
+    height: 20px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--color1);
+    border-radius: 16px;
+    border: 2px solid var(--color3);
+    padding: 5px;
+    width: 300px;
+    z-index: 11;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &.open {
+      opacity: 1;
+      transform: scaleY(1);
+      visibility: visible;
+    }
+
+    .item {
+      cursor: pointer;
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--color4);
+      border-radius: 14px;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        color: var(--color3);
+      }
+
+      &:hover {
+        background: var(--color2);
+        color: var(--color4);
+      }
+    }
+
+    .label {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color4);
+      user-select: none;
+      cursor: default;
+      border-bottom: 2px solid var(--color3);
+      margin-bottom: 5px;
+    }
+  }
+
+  .clickerAway {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+  }
+}

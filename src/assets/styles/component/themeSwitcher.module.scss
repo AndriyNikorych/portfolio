@@ -1,0 +1,45 @@
+.themeSelector {
+  position: relative;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--color5);
+  border-radius: 16px;
+  padding: 10px 12px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  overflow: hidden;
+
+  :global(html.dark) & {
+    .moon {
+      transform: translate(-50%, -50%);
+    }
+
+    .sun {
+      transform: translate(200%, 0%);
+    }
+  }
+
+  .sun, .moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    color: var(--color4);
+    transition: transform .3s ease-in-out;
+  }
+
+  .moon {
+    transform: translate(-200%, 0%);
+  }
+
+  .sun {
+    transform: translate(-50%, -50%);
+  }
+}
+
+

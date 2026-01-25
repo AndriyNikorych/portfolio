@@ -9,11 +9,6 @@ export function ContactList() {
 	return (
 		<ul className={css.contactsList}>
 			<li className={css.contactsItem}>
-				<Link href={"mailto:nikorychandriy@gmail.com"} target={"_blank"}>
-					<GmailIcon className={css.contactsIcon} />
-				</Link>
-			</li>
-			<li className={css.contactsItem}>
 				<Link href={"https://www.linkedin.com/in/andriy-nikorych-a7951a21b/"} target={"_blank"}>
 					<LinkedInIcon className={css.contactsIcon} />
 				</Link>
@@ -27,6 +22,12 @@ export function ContactList() {
 			<li className={css.contactsItem}>
 				<Link href={"https://github.com/AndriyNikorych"} target={"_blank"}>
 					<GitHub className={css.contactsIcon} />
+				</Link>
+			</li>
+
+			<li className={css.contactsItem}>
+				<Link href={"mailto:nikorychandriy@gmail.com"} target={"_blank"}>
+					<GmailIcon className={css.contactsIcon} />
 				</Link>
 			</li>
 		</ul>
