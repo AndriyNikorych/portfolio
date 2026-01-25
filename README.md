@@ -1,4 +1,4 @@
-[Open website](https://andriynikorych.github.io/portfolio/)
+[Open website](https://andriynikorych.github.io/portfolio/en/)
 
 ## Getting Started
 
