@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 	output: "export",
 	basePath: `/${repo}`,
 	images: { unoptimized: true },
+	trailingSlash: true,
 	turbopack: {
 		rules: {
 			"*.svg": {
