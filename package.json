@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint",
-		"deploy": "gh-pages -d out"
+		"deploy": "gh-pages -d out --dotfiles"
 	},
 	"dependencies": {
 		"classnames": "^2.5.1",
