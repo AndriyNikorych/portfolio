@@ -4,7 +4,7 @@ import HomeIcon from "@/assets/svg/home.svg";
 import { Settings } from "@/components/Header/Settings";
 import { useTranslation } from "@/locale/useTranslation";
 import { NavigationItem } from "@/components/Header/NavigationItem";
-import { useLocale } from "use-intl";
+import { useLocale } from "next-intl";
 
 export function Header() {
 	const t = useTranslation();
