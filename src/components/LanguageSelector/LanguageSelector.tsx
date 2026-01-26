@@ -1,6 +1,6 @@
 import { useLocale } from "use-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { locales, AppLocale } from "@/locale/i18n/request";
 import css from "@css/component/languageSelector.module.scss";
 import UkraineIcon from "@/assets/svg/uk.svg";
@@ -21,7 +21,7 @@ const lang = {
 	}
 };
 
-export function LanguageSelector() {
+export function LanguageSelector({ onClose }: { onClose: () => void }) {
 	const locale = useLocale() as AppLocale;
 	const router = useRouter();
 	const pathname = usePathname();
@@ -33,6 +33,7 @@ export function LanguageSelector() {
 
 		if (locale === nextLocale) {
 			setOpen(false);
+			onClose();
 			return;
 		}
 

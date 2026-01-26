@@ -3,7 +3,7 @@
 
   .button {
     border-radius: 16px;
-    border: 2px solid var(--color4);
+    border: 3px solid var(--color4);
     padding: 10px 12px;
     height: 40px;
     width: 80px;
@@ -20,6 +20,7 @@
 
   .icon {
     height: 20px;
+
     svg {
       width: 20px;
       height: 20px;
@@ -32,7 +33,7 @@
     right: 0;
     background-color: var(--color1);
     border-radius: 16px;
-    border: 2px solid var(--color3);
+    border: 3px solid var(--color3);
     padding: 5px;
     width: 300px;
     z-index: 11;
@@ -87,4 +88,46 @@
     inset: 0;
     z-index: 9;
   }
+}
+
+@media (max-width: 600px) {
+  .languageSelector{
+    .button {
+      width: 100px;
+      height: 60px;
+      font-size: 24px;
+
+      .icon {
+        height: 30px;
+
+        svg {
+          height:30px;
+          width: 30px;
+        }
+      }
+    }
+
+    .list {
+      width: 300px;
+      top: auto;
+      bottom: 70px;
+      right: auto;
+      left: calc(50% + 40px);
+      transform-origin: bottom;
+      transform: scaleY(0) translateX(-50%);
+
+      &.open {
+        transform: scaleY(1) translateX(-50%);
+      }
+
+      .label {
+        font-size: 24px;
+      }
+
+      .item {
+        font-size: 24px;
+      }
+    }
+  }
+
 }

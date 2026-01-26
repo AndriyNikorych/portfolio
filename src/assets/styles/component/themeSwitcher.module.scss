@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  border: 2px solid var(--color5);
+  border: 3px solid var(--color4);
   border-radius: 16px;
   padding: 10px 12px;
   width: 40px;
@@ -39,6 +39,18 @@
 
   .sun {
     transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .themeSelector {
+    width: 60px;
+    height: 60px;
+
+    .sun, .moon {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 
