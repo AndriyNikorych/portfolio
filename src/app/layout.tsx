@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
 import "@css/main.scss";
+import { Fonts } from "@/assets/fonts";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang={"en"} suppressHydrationWarning>
-			<body>{children}</body>
+			<body className={Fonts.variable}>{children}</body>
 		</html>
 	);
 }

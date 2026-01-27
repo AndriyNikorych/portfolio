@@ -1,4 +1,4 @@
-import { useLocale } from "use-intl";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { locales, AppLocale } from "@/locale/i18n/request";

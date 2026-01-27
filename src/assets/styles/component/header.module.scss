@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
 
     .close {
       display: none;
@@ -84,10 +85,10 @@
 @media (max-width: 600px) {
   .header {
     justify-content: flex-start;
-    color: var(--color4);
 
     .mobileMenu {
       display: block;
+      color: var(--color4);
     }
 
     .headerContent {

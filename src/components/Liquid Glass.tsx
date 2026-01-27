@@ -1,14 +1,20 @@
 import { ReactNode } from "react";
 import css from "@css/component/liquidGlass.module.scss";
 import cn from "classnames";
-import LiquidGlassIcon from "@/assets/svg/liquidGlass.svg";
 
-export function LiquidGlass({ className, children }: { className?: string; children?: ReactNode }) {
+interface LiquidGlassProps {
+	className?: string;
+	classContent?: string;
+	children?: ReactNode;
+	withOverlay?: boolean;
+}
+
+export function LiquidGlass({ className, classContent, children, withOverlay = true }: LiquidGlassProps) {
 	return (
 		<div className={cn(css.liquidGlassWrapper, className)}>
 			<div className={css.liquidGlassEffect} />
-			<div className={css.overlay} />
-			<div className={css.glassContent}>{children}</div>
+			{withOverlay && <div className={css.overlay} />}
+			<div className={cn(css.glassContent, classContent)}>{children}</div>
 			<svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
 				<filter id="glassFilter">
 					<feTurbulence
