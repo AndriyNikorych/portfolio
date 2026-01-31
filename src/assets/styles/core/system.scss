@@ -119,7 +119,7 @@ button {
 }
 
 body {
-  font-family: "Atkinson Hyperlegible Mono", "Helvetica", "Arial", sans-serif;
+  font-family: var(--fontFamily), "Helvetica", "Arial", sans-serif;
   background: var(--color1);
   color: var(--color4);
   min-height: 100vh;

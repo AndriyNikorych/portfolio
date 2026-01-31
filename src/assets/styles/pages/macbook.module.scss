@@ -1,0 +1,124 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+  background: url("/images/tahoe_background_light.webp") center / cover no-repeat;
+  overflow: hidden;
+  color: var(--typeColor);
+  transition: background 0.3s ease, color 0.3s ease;
+
+  :global(html.dark) & {
+    background: url("/images/tahoe_background_dark.webp") center / cover no-repeat;
+  }
+
+  .loadingScreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 150px;
+    z-index: 10;
+
+    svg {
+      width: 20vmin;
+      height: 20vmin;
+      max-width: 200px;
+      max-height: 200px;
+      color: #fff;
+    }
+  }
+
+  .loadingBar {
+    position: relative;
+    width: 50vw;
+    height: 5px;
+    max-width: 350px;
+    background: #7a7a7a;
+    border-radius: 999px;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 999px;
+      transform: translateX(-10%);
+      animation: loading 1s ease-in-out forwards;
+    }
+  }
+}
+
+
+.footerNavBarContainer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+
+  .footerNavBar {
+    max-width: 80%;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .footerGlassContent {
+      width: max-content;
+    }
+
+    .footerNavBarList {
+      display: flex;
+      gap: 20px;
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .footerNavBarItem {
+    position: relative;
+    width: 50px;
+    height: 50px;
+
+    &:has(.icon:hover) {
+      .footerNavBarPlaceholder {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .footerNavBarPlaceholder {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: #fff;
+    font-size: 12px;
+    border-radius: 32px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    width: max-content;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(0);
+  }
+}

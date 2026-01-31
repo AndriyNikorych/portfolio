@@ -1,14 +1,18 @@
 import { ReactNode } from "react";
 import css from "@css/component/liquidGlass.module.scss";
 import cn from "classnames";
-import LiquidGlassIcon from "@/assets/svg/liquidGlass.svg";
 
-export function LiquidGlass({ className, children }: { className?: string; children?: ReactNode }) {
+type LiquidGlassType = {
+	classes?: { root?: string; effect?: string; overlay?: string; glassContent?: string };
+	children?: ReactNode;
+};
+
+export function LiquidGlass({ classes, children }: LiquidGlassType) {
 	return (
-		<div className={cn(css.liquidGlassWrapper, className)}>
-			<div className={css.liquidGlassEffect} />
-			<div className={css.overlay} />
-			<div className={css.glassContent}>{children}</div>
+		<div className={cn(css.liquidGlassWrapper, classes?.root)}>
+			<div className={cn(css.liquidGlassEffect, classes?.effect)} />
+			<div className={cn(css.overlay, classes?.overlay)} />
+			<div className={cn(css.glassContent, classes?.glassContent)}>{children}</div>
 			<svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
 				<filter id="glassFilter">
 					<feTurbulence
@@ -19,7 +23,7 @@ export function LiquidGlass({ className, children }: { className?: string; child
 						result="turbulence"
 					/>
 					<feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-					<feDisplacementMap in="SourceGraphic" in2="softMap" scale="100" />
+					<feDisplacementMap in="SourceGraphic" in2="softMap" scale="150" />
 				</filter>
 			</svg>
 		</div>

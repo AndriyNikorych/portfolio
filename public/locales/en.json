@@ -1,0 +1,36 @@
+{
+	"global": {
+		"dark": "dark",
+		"light": "light",
+		"noData": "No data",
+		"workInProgress": "Work in progress..."
+	},
+	"home": {
+		"title": "Andrii Nikorych",
+		"name": "Andrii",
+		"surname": "Nikorych",
+		"hello": "Hello, I`m",
+		"description": "Front-End Developer",
+		"changeTheme": "Tap here",
+		"continue": "Click on the screen"
+	},
+	"footer": {
+		"telegram": "Join to my Telegram",
+		"gitHub": "Check my GitHub profile",
+		"linkedIn": "Join to my LinkedIn",
+		"gmail": "Text me on Gmail",
+		"portfolio": "My portfolio",
+		"settings": "Settings",
+		"goBack": "Back to room"
+	},
+	"settings": {
+		"title": "Settings",
+		"description": "You can change here a color theme and language",
+		"theme": "Theme",
+		"language": "Language"
+	},
+	"lang": {
+		"ukraine": "Ukrainian",
+		"english": "English"
+	}
+}
