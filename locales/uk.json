@@ -1,0 +1,36 @@
+{
+	"home": {
+		"name": "Андрій",
+		"surname": "Нікорич",
+		"title": "Андрій Нікорич",
+		"description": "Front-End розробник",
+		"hello": "Привіт, я",
+		"changeTheme": "Натисни тут",
+		"continue": "Натисни на екран"
+	},
+	"global": {
+		"dark": "Темна",
+		"light": "Світла",
+		"noData": "Поки пусто",
+		"workInProgress": "В процесі..."
+	},
+	"footer": {
+		"telegram": "Мій Телеграм",
+		"gitHub": "Перевір мій профіль на GitHub",
+		"linkedIn": "Долучайся до LinkedIn",
+		"gmail": "Моя електрона пошта",
+		"portfolio": "Портфоліо",
+		"settings": "Налаштування",
+		"goBack": "Повернутися до кімнати"
+	},
+	"settings": {
+		"title": "Налаштування",
+		"description": "Можна змінити тему та мову",
+		"theme": "Тема",
+		"language": "Мова"
+	},
+	"lang": {
+		"ukraine": "Українська",
+		"english": "Англійська"
+	}
+}
