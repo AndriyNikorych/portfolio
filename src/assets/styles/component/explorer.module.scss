@@ -26,10 +26,8 @@
     }
 
     .content {
-      height: 100%;
       border-radius: 0 0 20px 20px;
-      flex: 1 1 auto;
-      min-height: 0;      // критично для flex + overflow
+      height: auto;
       overflow: auto;
     }
 
