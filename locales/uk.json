@@ -21,7 +21,8 @@
 		"gmail": "Моя електрона пошта",
 		"portfolio": "Портфоліо",
 		"settings": "Налаштування",
-		"goBack": "Повернутися до кімнати"
+		"goBack": "Повернутися до кімнати",
+		"contacts": "Список контактів"
 	},
 	"settings": {
 		"title": "Налаштування",
@@ -32,5 +33,15 @@
 	"lang": {
 		"ukraine": "Українська",
 		"english": "Англійська"
+	},
+	"contacts": {
+		"title": "Мої контакти",
+		"telegram": "Telegram",
+		"gitHub": "GitHub",
+		"linkedIn": "LinkedIn",
+		"gmail": "Gmail"
+	},
+	"app": {
+		"calendar": "Календар"
 	}
 }

@@ -21,7 +21,8 @@
 		"gmail": "Text me on Gmail",
 		"portfolio": "My portfolio",
 		"settings": "Settings",
-		"goBack": "Back to room"
+		"goBack": "Back to room",
+		"contacts": "Contacts"
 	},
 	"settings": {
 		"title": "Settings",
@@ -32,5 +33,16 @@
 	"lang": {
 		"ukraine": "Ukrainian",
 		"english": "English"
+	},
+	"contacts": {
+		"title": "Contacts",
+		"description": "You can contact me here",
+		"telegram": "Telegram",
+		"gitHub": "GitHub",
+		"linkedIn": "LinkedIn",
+		"gmail": "Gmail"
+	},
+	"app": {
+		"calendar": "Calendar"
 	}
 }
