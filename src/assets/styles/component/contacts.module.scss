@@ -1,0 +1,45 @@
+.contactsList {
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  color: var(--whiteColor);
+  display: none;
+
+  .contactsListClose {
+    position: absolute;
+    inset: -100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.glassContent {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    position: absolute;
+    top: -40px;
+    left: 15px
+  }
+}
+
+.list {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+
+  .contactItem {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

@@ -21,6 +21,15 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 	const ref = useRef<HTMLDivElement>(null);
 	const [fullSize, setFullSize] = useState(false);
 	const timeline = useRef<gsap.core.Timeline>(null);
+	const [pos, setPos] = useState({ x: 0, y: 0 });
+	const dragState = useRef({
+		dragging: false,
+		pointerId: 0,
+		startX: 0,
+		startY: 0,
+		originX: 0,
+		originY: 0
+	});
 
 	useEffect(() => {
 		const el = ref.current;
@@ -29,7 +38,6 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 		if (!el || !iconEl) {
 			return;
 		}
-
 		const winRect = el.getBoundingClientRect();
 		const iconRect = iconEl.getBoundingClientRect();
 
@@ -42,27 +50,42 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 
 		if (timeline.current) timeline.current.kill();
 
-		timeline.current = gsap.timeline({
-			defaults: { ease: "power3.inOut" }
-		});
+		timeline.current = gsap.timeline({ ease: "power3.inOut" });
 
-		timeline.current.set(el, { x: dx, y: dy }).to(
-			el,
-			{
-				duration: 0.4,
-				x: 0,
-				y: 0,
-				scale: 1,
-				opacity: 1
-			},
-			0
-		);
+		timeline.current.set(el, { x: dx, y: dy, scale: 0, opacity: 0 }).to(el, {
+			duration: 0.4,
+			x: 0,
+			y: 0,
+			scale: 1,
+			opacity: 1
+		});
 	}, []);
 
 	const handleCloseClick = () => {
-		if (timeline.current) {
-			timeline.current.reverse();
-			timeline.current.eventCallback("onReverseComplete", () => onClose?.());
+		const el = ref.current;
+		const iconEl = iconRef?.current;
+
+		if (el && iconEl && timeline.current) {
+			const iconRect = iconEl.getBoundingClientRect();
+			const winRect = el.getBoundingClientRect();
+
+			const x = iconRect.left - window.innerWidth / 2;
+			const y = window.innerHeight - winRect.height - 120;
+
+			timeline.current.fromTo(
+				el,
+				{ x: pos.x, y: pos.y },
+				{
+					duration: 0.4,
+					x: x,
+					y: y,
+					scale: 0,
+					opacity: 0,
+					onComplete: () => {
+						onClose?.();
+					}
+				}
+			);
 		} else {
 			onClose?.();
 		}
@@ -72,13 +95,61 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 		el.currentTarget.focus();
 	};
 
+	const onFullSize = () => {
+		setFullSize(!fullSize);
+		setPos({ x: 0, y: 0 });
+	};
+
+	const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+		if (fullSize || e.button !== 0) return;
+
+		e.currentTarget.setPointerCapture(e.pointerId);
+
+		dragState.current = {
+			dragging: true,
+			pointerId: e.pointerId,
+			startX: e.clientX,
+			startY: e.clientY,
+			originX: pos.x,
+			originY: pos.y
+		};
+
+		const onMove = (ev: PointerEvent) => {
+			if (!dragState.current.dragging || ev.pointerId !== dragState.current.pointerId || !ref.current)
+				return;
+
+			const dx = ev.clientX - dragState.current.startX;
+			const dy = ev.clientY - dragState.current.startY;
+
+			const maxTop = window.innerHeight - ref.current?.offsetHeight - 120;
+			const y = Math.min(dragState.current.originY + dy, maxTop);
+
+			setPos({
+				x: dragState.current.originX + dx,
+				y: y
+			});
+		};
+
+		const onUp = (ev: PointerEvent) => {
+			if (ev.pointerId !== dragState.current.pointerId) return;
+
+			dragState.current.dragging = false;
+			window.removeEventListener("pointermove", onMove);
+			window.removeEventListener("pointerup", onUp);
+		};
+
+		window.addEventListener("pointermove", onMove);
+		window.addEventListener("pointerup", onUp);
+	};
+
 	return (
 		<div
 			className={css.explorer}
 			ref={ref}
 			style={{
 				["--width"]: fullSize ? "100%" : "600px",
-				["--height"]: fullSize ? "calc(100vh - 120px)" : "max-content"
+				["--height"]: fullSize ? "calc(100vh - 120px)" : "max-content",
+				transform: `translateX(-50%) translate(${pos.x}px, ${pos.y}px)`
 			}}
 			id={id}
 			tabIndex={0}
@@ -95,11 +166,12 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 						<Line />
 					</div>
 				</div>
-				<div className={css.fullSize} onClick={() => setFullSize(!fullSize)}>
+				<div className={css.fullSize} onClick={onFullSize}>
 					<div className={css.icon}>
 						<ArrowUpDown />
 					</div>
 				</div>
+				<div className={css.dragAndDrop} onPointerDown={onPointerDown}></div>
 			</div>
 
 			<div className={css.content}>{children}</div>

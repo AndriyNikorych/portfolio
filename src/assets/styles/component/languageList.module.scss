@@ -1,9 +1,7 @@
-.language {
-  .title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .languageList {
@@ -47,3 +45,22 @@
   }
 }
 
+@media (max-height: 760px) {
+  .title {
+    margin-bottom: 8px;
+  }
+
+  .languageList {
+    gap: 5px;
+
+    .icon {
+      width: 35px;
+      height: 35px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

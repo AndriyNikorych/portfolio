@@ -12,6 +12,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 				<ThemeProvider attribute="class" defaultTheme={"system"} enableSystem>
 					{children}
 				</ThemeProvider>
+				<link rel="preload" as="image" href="/images/backgounds" />
+
 				<div id="explorer-portal" />
 			</body>
 		</html>

@@ -1,6 +1,7 @@
 export const Config = {
 	navigationScheme: {
-		macOs: "/macOs",
+		macOs: "/tahoe",
+		loading: "/loading",
 		root: "/"
 	}
 };

@@ -1,7 +1,14 @@
+import { useSyncExternalStore } from "react";
+
 export enum LOCALE_ENUM {
 	EN = "en",
 	UK = "uk"
 }
+
+export const FULL_LOCALE = {
+	[LOCALE_ENUM.EN]: "en-EN",
+	[LOCALE_ENUM.UK]: "uk-UA"
+};
 
 export type Locale = LOCALE_ENUM.EN | LOCALE_ENUM.UK;
 
@@ -41,6 +48,12 @@ export function subscribe(listener: () => void) {
 
 function isLocale(x: unknown): x is Locale {
 	return x === LOCALE_ENUM.EN || x === LOCALE_ENUM.UK;
+}
+
+export async function prefetchLocale(locale: Locale) {
+	try {
+		await loadMessages(locale);
+	} catch {}
 }
 
 async function loadMessages(locale: Locale): Promise<Messages> {
@@ -119,8 +132,15 @@ export function initI18n() {
 	document.documentElement.lang = locale;
 
 	void setLocale(locale);
+	void prefetchLocale(locale);
 }
 
 export function useLocale() {
-	return { locale: state.locale, setLocale: setLocale };
+	const snap = useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
+
+	return {
+		locale: snap.locale,
+		fullLocale: FULL_LOCALE[snap.locale],
+		setLocale
+	};
 }

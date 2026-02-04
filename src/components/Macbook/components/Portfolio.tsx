@@ -12,11 +12,20 @@ export function Portfolio() {
 	const onClose = () => {
 		setOpen(false);
 	};
+
+	const onOpen = () => {
+		setOpen(true);
+
+		if (open) {
+			document.getElementById("portfolio")?.focus();
+		}
+	};
+
 	const t = useTranslation();
 
 	return (
 		<div className={css.settings}>
-			<div className={css.iconButton} onClick={() => setOpen(true)} ref={iconRef}>
+			<div className={css.iconButton} onClick={onOpen} ref={iconRef}>
 				<PortfolioIcon className={macbookCss.icon} />
 			</div>
 

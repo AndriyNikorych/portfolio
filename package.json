@@ -10,6 +10,8 @@
 		"deploy": "gh-pages -d out --dotfiles"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.1",
 		"classnames": "^2.5.1",
 		"gsap": "^3.14.2",
 		"lucide-react": "^0.562.0",
@@ -22,6 +24,7 @@
 		"swr": "^2.3.8"
 	},
 	"devDependencies": {
+		"@mui/material": "^7.3.7",
 		"@svgr/webpack": "^8.1.0",
 		"@types/node": "^20",
 		"@types/react": "^19",
