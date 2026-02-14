@@ -43,6 +43,12 @@
 		"gmail": "Gmail"
 	},
 	"app": {
-		"calendar": "Calendar"
+		"calendar": "Calendar",
+		"weather": "Weather",
+		"calculator": "Calculator"
+	},
+	"header": {
+		"title": "Andrii Nikorych",
+		"position": "Front-End Developer"
 	}
 }

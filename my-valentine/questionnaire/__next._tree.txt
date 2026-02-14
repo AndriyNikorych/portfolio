@@ -1,0 +1,8 @@
+:HL["/portfolio/_next/static/chunks/726809eae111e348.css","style"]
+:HL["/portfolio/_next/static/chunks/32122f78d8aec2ec.css","style"]
+:HL["/portfolio/_next/static/media/a8ff2d5d0ccb0d12-s.p.fc5b72a7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/portfolio/_next/static/media/aae5f0be330e13db-s.p.853e26d6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/portfolio/_next/static/media/e7fe96c05ca2a075-s.p.312dc7c4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/portfolio/_next/static/chunks/f5dfacc78e391aff.css","style"]
+:HL["/portfolio/images/backgounds","image"]
+0:{"buildId":"KsW2tsw_wlK8EA3_vch02","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"my-valentine","paramType":null,"paramKey":"my-valentine","hasRuntimePrefetch":false,"slots":{"children":{"name":"questionnaire","paramType":null,"paramKey":"questionnaire","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
