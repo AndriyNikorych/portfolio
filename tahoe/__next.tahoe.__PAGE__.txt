@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[4079,["/portfolio/_next/static/chunks/027485e848284585.js","/portfolio/_next/static/chunks/1e476eadf2a61956.js","/portfolio/_next/static/chunks/5e49a781e225d6dd.js","/portfolio/_next/static/chunks/4984599ea6ef4129.js"],"Tahoe"]
+2:I[4079,["/portfolio/_next/static/chunks/027485e848284585.js","/portfolio/_next/static/chunks/1e476eadf2a61956.js","/portfolio/_next/static/chunks/a80499f41712da36.js","/portfolio/_next/static/chunks/4984599ea6ef4129.js"],"Tahoe"]
 3:I[97367,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-:HL["/portfolio/_next/static/chunks/942783fa8559af6e.css","style"]
-0:{"buildId":"Gdx8nn8EVXfx-72lwHvEd","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/chunks/942783fa8559af6e.css","precedence":"next"}],["$","script","script-0",{"src":"/portfolio/_next/static/chunks/1e476eadf2a61956.js","async":true}],["$","script","script-1",{"src":"/portfolio/_next/static/chunks/5e49a781e225d6dd.js","async":true}],["$","script","script-2",{"src":"/portfolio/_next/static/chunks/4984599ea6ef4129.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+:HL["/portfolio/_next/static/chunks/ac7dfc90bb789d52.css","style"]
+0:{"buildId":"YuYoT1sDr5_sxW2YtsX9m","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/chunks/ac7dfc90bb789d52.css","precedence":"next"}],["$","script","script-0",{"src":"/portfolio/_next/static/chunks/1e476eadf2a61956.js","async":true}],["$","script","script-1",{"src":"/portfolio/_next/static/chunks/a80499f41712da36.js","async":true}],["$","script","script-2",{"src":"/portfolio/_next/static/chunks/4984599ea6ef4129.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
