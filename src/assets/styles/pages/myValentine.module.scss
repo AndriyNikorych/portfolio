@@ -1,0 +1,230 @@
+.root {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: #fdf0f0;
+  color: #f18686;
+  font-family: var(--valentineFont);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  perspective: 100px;
+  perspective-origin: 50% 40%;
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  .content {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+  }
+
+  .header {
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    font-size: 35px;
+    max-width: 1200px;
+  }
+
+  .letterWrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: absolute;
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+    z-index: 1;
+
+    .top {
+      width: 100%;
+      height: 100%;
+      transform-origin: top center;
+      position: absolute;
+      z-index: 3;
+    }
+
+    .topPart {
+      position: absolute;
+      clip-path: polygon(50% 55%, 0 0, 100% 0);
+      background: #9c7c66;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(10px);
+
+      &:before {
+        content: "";
+        position: absolute;
+        clip-path: polygon(50% 55%, 0 0, 100% 0);
+        background: #ffd5b0;
+        top: -2px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .waxSeal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+
+    .waxText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 30px;
+      letter-spacing: 0.95px;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      z-index: 4;
+    }
+
+    .bottom {
+      position: absolute;
+      clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+      background: #9c7c66;
+      width: 100%;
+      height: 100%;
+      transform: translate3d(0, 1px,5px);
+      z-index: 1;
+      top: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+        background: #ffd5b0;
+        top: 2px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .seconds {
+      width: 92px;
+    }
+  }
+}
+
+.cardDragging {
+  transition: none;
+  cursor: grabbing;
+  box-shadow:
+          0 45px 90px rgba(0, 0, 0, 0.30),
+          0 18px 30px rgba(0, 0, 0, 0.22);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff9f3;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 500ms ease;
+  touch-action: none;
+  user-select: none;
+  border-radius: 18px;
+  cursor: grab;
+  //box-shadow:
+  //        0 30px 70px rgba(0, 0, 0, 0.25),
+  //        0 10px 18px rgba(0, 0, 0, 0.18),
+  //        0 2px 3px rgba(0, 0, 0, 0.22);
+
+  --sx: 0px;
+  --sy: 30px;
+  --blur: 70px;
+  --spread: 0px;
+  --a: 0.25;
+
+  box-shadow:
+          calc(var(--sx) * 1) var(--sy) var(--blur) var(--spread) rgba(0, 0, 0, var(--a)),
+          calc(var(--sx) * 0.35) calc(var(--sy) * 0.55) calc(var(--blur) * 0.55) 0 rgba(0, 0, 0, calc(var(--a) * 0.72)),
+          0 2px 3px 0 rgba(0, 0, 0, 0.22);
+
+
+  .frontSide {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    position: absolute;
+    z-index: 1;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .startingDate {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: var(--whiteColor);
+    text-shadow: 0 0 8px var(--blackColor);
+    font-size: 30px;
+  }
+
+  .turnText {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--whiteColor);
+    text-shadow: 0 0 2px var(--blackColor);
+    font-size: 30px;
+  }
+
+  .photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: brightness(1.2) sepia(30%);
+  }
+
+  .backSide {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    position: absolute;
+    z-index: 2;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg) ;
+  }
+
+  .letterText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 35px;
+    font-size: clamp(20px, 3vw,35px);
+    font-variant-numeric: tabular-nums;
+    border: 1px solid #f18686;
+  }
+
+  .secondsContainer {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.heartRain {
+  position: fixed;
+  inset: 0;
+  user-select: none;
+  pointer-events: none;
+  z-index: 102;
+}

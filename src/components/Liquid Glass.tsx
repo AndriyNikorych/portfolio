@@ -5,9 +5,11 @@ import cn from "classnames";
 type LiquidGlassType = {
 	classes?: { root?: string; effect?: string; overlay?: string; glassContent?: string };
 	children?: ReactNode;
+	scale?: number;
+	seed?: number;
 };
 
-export function LiquidGlass({ classes, children }: LiquidGlassType) {
+export function LiquidGlass({ classes, children, scale = 150, seed = 5 }: LiquidGlassType) {
 	return (
 		<div className={cn(css.liquidGlassWrapper, classes?.root)}>
 			<div className={cn(css.liquidGlassEffect, classes?.effect)} />
@@ -19,11 +21,11 @@ export function LiquidGlass({ classes, children }: LiquidGlassType) {
 						type="fractalNoise"
 						baseFrequency="0.01 0.01"
 						numOctaves="1"
-						seed="5"
+						seed={seed}
 						result="turbulence"
 					/>
 					<feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-					<feDisplacementMap in="SourceGraphic" in2="softMap" scale="150" />
+					<feDisplacementMap in="SourceGraphic" in2="softMap" scale={scale} />
 				</filter>
 			</svg>
 		</div>

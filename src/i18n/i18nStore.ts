@@ -60,7 +60,7 @@ async function loadMessages(locale: Locale): Promise<Messages> {
 	const cached = cache.get(locale);
 	if (cached) return cached;
 
-	const res = await fetch(`/locales/${locale}.json`, {
+	const res = await fetch(`/portfolio/locales/${locale}.json`, {
 		cache: "force-cache"
 	});
 

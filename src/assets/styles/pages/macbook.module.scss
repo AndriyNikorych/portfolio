@@ -13,14 +13,17 @@
 
 .macBookContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
-  grid-template-rows: repeat(auto-fill, 150px);
+  grid-template-columns: repeat(auto-fill,  160px);
+  grid-template-rows: repeat(auto-fill, minmax(160px, auto));
+  justify-content: space-between;
+  gap: 20px;
   padding: 20px;
 }
 
 .footerNavBarContainer {
   position: fixed;
   bottom: 10px;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;

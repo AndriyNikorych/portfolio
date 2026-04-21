@@ -8,7 +8,10 @@
   --color7: rgba(255, 255, 255, 0.5);
   --color8: #007aff;
   --color9: #ff3333;
-  --color10: rgba(251, 143, 40, 0.8);
+  --color10: rgba(251, 143, 40, 0.6);
+
+  --batteryColor: #fff;
+  --widgetBg: rgba(20, 20, 20, 0.7);
 
   --typeColor: #fff;
   --redColor: #ff5c5f;
@@ -16,6 +19,7 @@
   --greenColor:#34c759;
   --whiteColor:#fff;
   --blackColor:#000;
+  --greyColor: #6c6c6c;
 }
 
 html.light {
@@ -31,5 +35,6 @@ html.light {
   --color9: #ff1313;
   --color10: #ff8913;
 
+  --widgetBg: rgba(227, 227, 227, 0.9);
   --typeColor: #000;
 }

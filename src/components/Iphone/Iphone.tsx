@@ -1,16 +1,24 @@
-import css from "@css/pages/macbook.module.scss";
+import css from "@css/pages/iphone.module.scss";
 import { FooterNavBar } from "@/components/Macbook/components/FooterNavBar";
 import { navigationList } from "@/modules/tahoe/utils";
 import { Contacts } from "@/components/Macbook/components/Contacts";
 import { MobileCalendar } from "@/components/Calendar/MobileCalendar";
+import { BatteryWidget } from "@/components/Battery/BatteryWidget";
+import { Clock } from "@/components/Clock/Clock";
+import { MobileHeader } from "@/components/Header/MobileHeader";
+import { CalculatorButton } from "@/components/Calculator/CalculatorButton";
 
 const footerList = [...navigationList, { placeholder: "contacts", item: <Contacts /> }];
 
 export function Iphone() {
 	return (
 		<div className={css.root}>
-			<div className={css.macBookContainer}>
+			<MobileHeader />
+			<div className={css.iphone}>
 				<MobileCalendar />
+				<BatteryWidget isMobile />
+				<Clock isMobile />
+				<CalculatorButton />
 				<FooterNavBar list={footerList} />
 			</div>
 		</div>

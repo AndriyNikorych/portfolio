@@ -5,19 +5,34 @@ import ArrowUpDown from "@/assets/svg/arrows-up-down.svg";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { usePortal } from "@/hooks/usePortal";
+import cn from "classnames";
 
 type ExplorerType = {
 	iconRef?: React.RefObject<HTMLDivElement | null>;
 	onClose?: () => void;
 	children: ReactNode;
 	id: string;
+	withFullWidth?: boolean;
+	classes?: {
+		root?: string;
+		contentClass?: string;
+	};
 };
 
-export function Explorer({ iconRef, onClose, id, children }: ExplorerType) {
-	return usePortal(<ExplorerContent children={children} iconRef={iconRef} id={id} onClose={onClose} />);
+export function Explorer({ classes, iconRef, onClose, id, children, withFullWidth }: ExplorerType) {
+	return usePortal(
+		<ExplorerContent
+			children={children}
+			iconRef={iconRef}
+			id={id}
+			onClose={onClose}
+			classes={classes}
+			withFullWidth={withFullWidth}
+		/>
+	);
 }
 
-function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
+function ExplorerContent({ iconRef, onClose, children, id, classes, withFullWidth = true }: ExplorerType) {
 	const ref = useRef<HTMLDivElement>(null);
 	const [fullSize, setFullSize] = useState(false);
 	const timeline = useRef<gsap.core.Timeline>(null);
@@ -70,7 +85,7 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 			const winRect = el.getBoundingClientRect();
 
 			const x = iconRect.left - window.innerWidth / 2;
-			const y = window.innerHeight - winRect.height - 120;
+			const y = iconRect.top + iconRect.height / 2 - winRect.height - 120;
 
 			timeline.current.fromTo(
 				el,
@@ -92,6 +107,17 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 	};
 
 	const onExplorerClick = (el: React.MouseEvent<HTMLDivElement>) => {
+		const target = el.target as HTMLElement | null;
+		if (!target) return;
+
+		const isFormControl = !!target.closest(
+			"input, textarea, select, button, [contenteditable='true'], [contenteditable=''], [contenteditable]"
+		);
+
+		if (isFormControl) {
+			return;
+		}
+
 		el.currentTarget.focus();
 	};
 
@@ -144,11 +170,10 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 
 	return (
 		<div
-			className={css.explorer}
+			className={cn(css.explorer, classes?.root)}
 			ref={ref}
 			style={{
-				["--width"]: fullSize ? "100%" : "600px",
-				["--height"]: fullSize ? "calc(100vh - 120px)" : "max-content",
+				["--width"]: fullSize ? "100%" : "max-content",
 				transform: `translateX(-50%) translate(${pos.x}px, ${pos.y}px)`
 			}}
 			id={id}
@@ -166,15 +191,17 @@ function ExplorerContent({ iconRef, onClose, children, id }: ExplorerType) {
 						<Line />
 					</div>
 				</div>
-				<div className={css.fullSize} onClick={onFullSize}>
-					<div className={css.icon}>
-						<ArrowUpDown />
+				{withFullWidth && (
+					<div className={css.fullSize} onClick={onFullSize}>
+						<div className={css.icon}>
+							<ArrowUpDown />
+						</div>
 					</div>
-				</div>
+				)}
 				<div className={css.dragAndDrop} onPointerDown={onPointerDown}></div>
 			</div>
 
-			<div className={css.content}>{children}</div>
+			<div className={cn(css.content, classes?.contentClass)}>{children}</div>
 		</div>
 	);
 }

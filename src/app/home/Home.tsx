@@ -33,8 +33,6 @@ export function Home() {
 		};
 	}, []);
 
-	useEffect(() => {}, []);
-
 	return (
 		<div className={css.root}>
 			<div className={css.home} ref={ref}>
