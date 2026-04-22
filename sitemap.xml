@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://andriynikorych.github.io/portfolio</loc>
+<lastmod>2026-04-22T19:22:53.860Z</lastmod>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://andriynikorych.github.io/portfolio/loading</loc>
+<lastmod>2026-04-22T19:22:53.860Z</lastmod>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://andriynikorych.github.io/portfolio/tahoe</loc>
+<lastmod>2026-04-22T19:22:53.860Z</lastmod>
+<priority>0.8</priority>
+</url>
+</urlset>
