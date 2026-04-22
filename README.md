@@ -1,36 +1,67 @@
-[Open website](https://andriynikorych.github.io/portfolio/en/)
+# Andrii Nikorych — Portfolio
 
-## Getting Started
+[🌐 Open Website](https://andriynikorych.github.io/portfolio/en/)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Interactive portfolio built as a macOS-inspired web experience with theme switching, multilingual support, and rich animations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🌗 Theme Switching
+- **Light / Dark mode** powered by [next-themes](https://github.com/pacocoursey/next-themes)
+- Detects system preference automatically (`enableSystem`)
+- Interactive lamp switcher on the home page to toggle the theme
+- Theme selector with visual previews inside Settings
 
-## Learn More
+### 🌍 Internationalization (i18n)
+- **English** and **Ukrainian** languages
+- Custom lightweight i18n store built with `useSyncExternalStore` — no heavy libraries
+- Messages loaded on demand with in-memory caching
+- Language persisted in `localStorage`
 
-To learn more about Next.js, take a look at the following resources:
+### 🎬 Animations (GSAP)
+- Powered by [GSAP](https://gsap.com/) with the **TextPlugin**
+- Typewriter text effect on the home page
+- Smooth timeline-based transitions between pages (zoom into MacBook screen)
+- Animated open/close for Explorer windows and Contacts panel (scale, translate, opacity)
+- macOS-style loading bar animation
+- Letter-opening animation with 3D rotation on the Valentine page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🏆 Lighthouse — 100 / 100 / 100 / 100
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Lighthouse Score](./public/images/lighthouse-results/lighthouse-score.png)
 
-## Deploy on Vercel
+| Metric | Value |
+|---|---|
+| **First Contentful Paint** | 0.3 s |
+| **Largest Contentful Paint** | 0.6 s |
+| **Total Blocking Time** | 20 ms |
+| **Cumulative Layout Shift** | 0 |
+| **Speed Index** | 0.4 s |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Lighthouse Metrics](./public/images/lighthouse-results/lighthouse-metrics.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> The site is statically generated at build time (SSG) using Next.js `output: "export"` with React Server Components, which ensures instant page loads with zero server runtime overhead.
+
+---
+
+## 🛠 Tech Stack
+
+| Category | Technology                                                                                     |
+|---|------------------------------------------------------------------------------------------------|
+| **Framework** | [Next.js 16](https://nextjs.org/) (App Router, Static Export)                                  |
+| **Rendering** | Static Site Generation (SSG) + React Server Components                                         |
+| **Runtime** | [Node.js](https://nodejs.org/)                                                                 |
+| **Language** | React.js, TypeScript                                                                           |
+| **UI** | React 19, SCSS Modules, CSS Variables                                                          |
+| **Theming** | [next-themes](https://github.com/pacocoursey/next-themes)                                      |
+| **i18n** | Custom store (`useSyncExternalStore` + JSON locale files)                                      |
+| **Animations** | [GSAP 3](https://gsap.com/) + TextPlugin                                                       |
+| **Icons** | [Lucide React](https://lucide.dev/), inline SVGs via `@svgr/webpack`                           |
+| **UI Components** | [MUI X Date Pickers](https://mui.com/x/react-date-pickers/), Liquid Glass effect (SVG filters) |
+| **Forms** | [React Hook Form](https://react-hook-form.com/)                                                |
+| **Data Fetching** | [SWR](https://swr.vercel.app/)                                                                 |
+| **Styling** | SASS / SCSS Modules, [classnames](https://github.com/JedWatson/classnames)                     |
+| **Linting / Formatting** | ESLint, Prettier                                                                               |
