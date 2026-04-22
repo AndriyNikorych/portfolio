@@ -22,7 +22,7 @@ export const contactList = [
 	{
 		placeholder: "telegram",
 		item: (
-			<Link href={"https://t.me/AndriyNikorych"} target={"_blank"}>
+			<Link href={"https://t.me/AndriyNikorych"} target={"_blank"} aria-label={"Telegram"}>
 				<TelegramIcon className={css.icon} />
 			</Link>
 		)
@@ -30,7 +30,7 @@ export const contactList = [
 	{
 		placeholder: "gitHub",
 		item: (
-			<Link href={"https://github.com/AndriyNikorych"} target={"_blank"}>
+			<Link href={"https://github.com/AndriyNikorych"} target={"_blank"} aria-label={"GitHub"}>
 				<GitHub className={css.icon} />
 			</Link>
 		)
@@ -38,7 +38,7 @@ export const contactList = [
 	{
 		placeholder: "gmail",
 		item: (
-			<Link href={"mailto:nikorychandriy@gmail.com"} target={"_blank"}>
+			<Link href={"mailto:nikorychandriy@gmail.com"} target={"_blank"} aria-label={"Gmail"}>
 				<GmailIcon className={css.icon} />
 			</Link>
 		)
@@ -46,7 +46,11 @@ export const contactList = [
 	{
 		placeholder: "linkedIn",
 		item: (
-			<Link href={"https://www.linkedin.com/in/andriy-nikorych-a7951a21b/"} target={"_blank"}>
+			<Link
+				href={"https://www.linkedin.com/in/andriy-nikorych-a7951a21b/"}
+				target={"_blank"}
+				aria-label={"LinkedIn"}
+			>
 				<LinkedIn className={css.icon} />
 			</Link>
 		)

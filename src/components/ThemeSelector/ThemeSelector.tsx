@@ -45,7 +45,7 @@ export function ThemeSelector() {
 				>
 					<Image
 						src={"/portfolio/images/tahoe_background_light_small.webp"}
-						alt="dark theme"
+						alt="light theme"
 						width={100}
 						height={100}
 						className={css.themeSelectorImage}

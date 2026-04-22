@@ -60,7 +60,7 @@ export function NextStepButton({ homeRef }: { homeRef: RefObject<HTMLDivElement 
 			<span className={css.laptopText} ref={textRef}>
 				{t("home.continue")}
 			</span>
-			<button onClick={handleContinue} className={css.laptopButton} />
+			<button onClick={handleContinue} className={css.laptopButton} aria-label={t("home.continue")} />
 		</div>
 	);
 }

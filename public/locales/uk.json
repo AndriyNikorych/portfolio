@@ -42,6 +42,12 @@
 		"gmail": "Gmail"
 	},
 	"app": {
-		"calendar": "Календар"
+		"calendar": "Календар",
+		"calculator": "Калькулятор",
+		"weather": "Погода"
+	},
+	"header": {
+		"title": "Андрій Нікорич",
+		"position": "Front-End розробник"
 	}
 }

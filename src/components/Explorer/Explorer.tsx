@@ -2,7 +2,7 @@ import css from "@css/component/explorer.module.scss";
 import Cross from "@/assets/svg/cross.svg";
 import Line from "@/assets/svg/line.svg";
 import ArrowUpDown from "@/assets/svg/arrows-up-down.svg";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { usePortal } from "@/hooks/usePortal";
 import cn from "classnames";
@@ -13,13 +13,22 @@ type ExplorerType = {
 	children: ReactNode;
 	id: string;
 	withFullWidth?: boolean;
+	maxContentWidth?: boolean;
 	classes?: {
 		root?: string;
 		contentClass?: string;
 	};
 };
 
-export function Explorer({ classes, iconRef, onClose, id, children, withFullWidth }: ExplorerType) {
+export function Explorer({
+	classes,
+	iconRef,
+	onClose,
+	id,
+	children,
+	withFullWidth,
+	maxContentWidth
+}: ExplorerType) {
 	return usePortal(
 		<ExplorerContent
 			children={children}
@@ -28,11 +37,20 @@ export function Explorer({ classes, iconRef, onClose, id, children, withFullWidt
 			onClose={onClose}
 			classes={classes}
 			withFullWidth={withFullWidth}
+			maxContentWidth={maxContentWidth}
 		/>
 	);
 }
 
-function ExplorerContent({ iconRef, onClose, children, id, classes, withFullWidth = true }: ExplorerType) {
+function ExplorerContent({
+	iconRef,
+	onClose,
+	children,
+	id,
+	classes,
+	withFullWidth = true,
+	maxContentWidth = false
+}: ExplorerType) {
 	const ref = useRef<HTMLDivElement>(null);
 	const [fullSize, setFullSize] = useState(false);
 	const timeline = useRef<gsap.core.Timeline>(null);
@@ -168,12 +186,21 @@ function ExplorerContent({ iconRef, onClose, children, id, classes, withFullWidt
 		window.addEventListener("pointerup", onUp);
 	};
 
+	const width = useMemo(() => {
+		console.log(fullSize, maxContentWidth);
+		if (fullSize) {
+			return "100%";
+		} else if (maxContentWidth) {
+			return "max-content";
+		} else return "";
+	}, [fullSize, maxContentWidth]);
+
 	return (
 		<div
 			className={cn(css.explorer, classes?.root)}
 			ref={ref}
 			style={{
-				["--width"]: fullSize ? "100%" : "max-content",
+				["--width"]: width,
 				transform: `translateX(-50%) translate(${pos.x}px, ${pos.y}px)`
 			}}
 			id={id}

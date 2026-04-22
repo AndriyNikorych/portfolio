@@ -3,19 +3,52 @@ import "@css/main.scss";
 import { Fonts } from "@/assets/fonts";
 import { I18nInit } from "@/i18n/I18nInit";
 import { ThemeProvider } from "@/components/ThemeSelector/ThemeProvider";
+import Head from "next/head";
+import type { Metadata } from "next";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang={"en"} suppressHydrationWarning>
+			<Head>
+				<link rel="preload" as="image" href="portfolio/images/backgounds/background_day.webp" />
+				<link rel="preload" as="image" href="portfolio/images/backgounds/background_night.webp" />
+			</Head>
 			<body className={Fonts.variable}>
 				<I18nInit />
 				<ThemeProvider attribute="class" defaultTheme={"system"} enableSystem>
-					{children}
+					<main>{children}</main>
 				</ThemeProvider>
-				<link rel="preload" as="image" href="/portfolio/images/backgounds" />
 
 				<div id="explorer-portal" />
 			</body>
 		</html>
 	);
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+	return {
+		title: {
+			default: "Andrii Nikorych — Front-End Developer",
+			template: "%s | Andrii Nikorych"
+		},
+		description: "Portfolio of Andrii Nikorych, a Front-End Developer.",
+		metadataBase: new URL("https://andriynikorych.github.io/portfolio"),
+		openGraph: {
+			title: "Andrii Nikorych — Front-End Developer",
+			description: "Portfolio of Andrii Nikorych, a Front-End Developer.",
+			url: "https://andriynikorych.github.io/portfolio",
+			siteName: "Andrii Nikorych Portfolio",
+			locale: "en_US",
+			type: "website"
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: "Andrii Nikorych — Front-End Developer",
+			description: "Portfolio of Andrii Nikorych, a Front-End Developer."
+		},
+		robots: {
+			index: true,
+			follow: true
+		}
+	};
 }

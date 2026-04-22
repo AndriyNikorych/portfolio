@@ -20,6 +20,7 @@ export function CalculatorButton() {
 					classes={{ root: css.explorer }}
 					withFullWidth={false}
 					iconRef={iconRef}
+					maxContentWidth
 					onClose={() => setOpen(false)}
 				>
 					<Calculator />

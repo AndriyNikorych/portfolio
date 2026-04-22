@@ -5,6 +5,9 @@ const repo = isProd ? "portfolio" : "";
 
 const nextConfig: NextConfig = {
 	output: "export",
+	images: {
+		unoptimized: true
+	},
 	basePath: repo ? `/${repo}` : "",
 	trailingSlash: true,
 	turbopack: {

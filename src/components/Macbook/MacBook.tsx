@@ -16,8 +16,8 @@ export function MacBook() {
 			<Header />
 			<div className={css.macBookContainer}>
 				<Calendar />
-				<BatteryWidget />
 				<Clock />
+				<BatteryWidget />
 				<CalculatorButton />
 				<FooterNavBar list={footerList} />
 			</div>

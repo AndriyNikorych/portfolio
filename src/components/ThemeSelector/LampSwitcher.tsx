@@ -22,7 +22,7 @@ export function LampSwitcher() {
 			<div className={css.arrow}>
 				<Arrow />
 			</div>
-			<button onClick={onCLick} className={css.switcher} />
+			<button onClick={onCLick} className={css.switcher} aria-label={t("home.changeTheme")} />
 		</div>
 	);
 }
