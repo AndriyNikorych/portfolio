@@ -3,4 +3,4 @@
 3:I[37457,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/7340adf74ff47ec0.js"],"default"]
 :HL["/images/backgounds/tahoe_background_light.webp","image"]
 :HL["/images/backgounds/tahoe_background_dark.webp","image"]
-0:{"buildId":"DSrGkEBIRrUX_XeYLpIFO","rsc":["$","$1","c",{"children":[null,[["$","head",null,{"children":[["$","link",null,{"rel":"preload","as":"image","href":"/images/backgounds/tahoe_background_light.webp"}],["$","link",null,{"rel":"preload","as":"image","href":"/images/backgounds/tahoe_background_dark.webp"}]]}],["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]]}],"loading":null,"isPartial":false}
+0:{"buildId":"bSAJXpXZrBH7ecoLxx3P5","rsc":["$","$1","c",{"children":[null,[["$","head",null,{"children":[["$","link",null,{"rel":"preload","as":"image","href":"/images/backgounds/tahoe_background_light.webp"}],["$","link",null,{"rel":"preload","as":"image","href":"/images/backgounds/tahoe_background_dark.webp"}]]}],["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]]}],"loading":null,"isPartial":false}
