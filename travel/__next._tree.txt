@@ -7,6 +7,6 @@
 :HL["/portfolio/_next/static/media/e7fe96c05ca2a075-s.p.312dc7c4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/portfolio/_next/static/chunks/80934feb5cd29b4d.css","style"]
 :HL["/portfolio/_next/static/chunks/975fe0dc44591572.css","style"]
-:HL["/images/backgounds/background_day.webp","image"]
-:HL["/images/backgounds/background_night.webp","image"]
-0:{"buildId":"bSAJXpXZrBH7ecoLxx3P5","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"travel","paramType":null,"paramKey":"travel","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/portfolio/images/backgounds/background_day.webp","image"]
+:HL["/portfolio/images/backgounds/background_night.webp","image"]
+0:{"buildId":"OizT8YJpHIgXFQ1VibCS3","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"travel","paramType":null,"paramKey":"travel","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
