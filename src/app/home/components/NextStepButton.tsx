@@ -8,7 +8,7 @@ import { Config } from "@/utilities/config";
 export function NextStepButton({ homeRef }: { homeRef: RefObject<HTMLDivElement | null> }) {
 	const timeline = useRef<gsap.core.Timeline>(null);
 	const buttonRef = useRef<HTMLDivElement>(null);
-	const textRef = useRef<HTMLDivElement>(null);
+	const textRef = useRef<HTMLSpanElement>(null);
 	const t = useTranslation();
 	const router = useRouter();
 
@@ -41,18 +41,13 @@ export function NextStepButton({ homeRef }: { homeRef: RefObject<HTMLDivElement 
 			onComplete: handleLoadingComplete
 		});
 		timeline.current
-			.to(
-				home,
-				{
-					duration: 1,
-					z: 99,
-					x: x,
-					y: y
-				},
-				0
-			)
-			.to(textRef.current, { duration: 0.5, y: -30, opacity: 0 }, 0)
-			.to(buttonRef.current, { duration: 1, background: "#000" }, 0.5);
+			.to(home, {
+				duration: 1,
+				z: 99,
+				x: x,
+				y: y
+			})
+			.to(buttonRef.current, { duration: 1, background: "#000" }, "<0.5");
 	};
 
 	return (

@@ -4,17 +4,31 @@
   align-items: center;
   gap: 20px;
   height: 100%;
+  --iconSize: 100px;
 
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--whiteColor);
-  text-shadow: 0 3px 2px var(--blackColor);
+  .label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--whiteColor);
+    text-shadow: 0 3px 2px var(--blackColor);
+  }
+
+
+  .iconWrapper {
+    background: #d4d4d2;
+    width: var(--iconSize);
+    height: var(--iconSize);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 16px;
+  }
 
   svg {
     flex-shrink: 0;
-    width: 100px;
-    height: 100px;
+    width: var(--iconSize);
+    height: var(--iconSize);
   }
 }
 

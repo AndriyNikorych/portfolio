@@ -11,7 +11,8 @@ type IconButtonProps = {
 export function IconButton({ icon, onClick, label, iconRef }: IconButtonProps) {
 	return (
 		<button className={css.iconButton} onClick={onClick} ref={iconRef}>
-			{icon}
+			<div className={css.iconWrapper}>{icon}</div>
+
 			<div className={css.label}>{label}</div>
 		</button>
 	);

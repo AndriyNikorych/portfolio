@@ -7,6 +7,7 @@ import { BatteryWidget } from "@/components/Battery/BatteryWidget";
 import { Clock } from "@/components/Clock/Clock";
 import { MobileHeader } from "@/components/Header/MobileHeader";
 import { CalculatorButton } from "@/components/Calculator/CalculatorButton";
+import { TravelIcon } from "@/modules/travel/TravelIcon";
 
 const footerList = [...navigationList, { placeholder: "contacts", item: <Contacts /> }];
 
@@ -19,6 +20,7 @@ export function Iphone() {
 				<BatteryWidget isMobile />
 				<Clock isMobile />
 				<CalculatorButton />
+				<TravelIcon />
 				<FooterNavBar list={footerList} />
 			</div>
 		</div>

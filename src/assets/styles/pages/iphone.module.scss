@@ -2,14 +2,14 @@
   width: 100vw;
   height: 100vh;
   background: url("/portfolio/images/backgounds/tahoe_background_light.webp") center / cover no-repeat;
-  //background: url("/images/backgounds/tahoe_background_light.webp") center / cover no-repeat;
+  background: url("/images/backgounds/tahoe_background_light.webp") center / cover no-repeat;
   overflow: hidden;
   color: var(--typeColor);
   transition: background 0.3s ease, color 0.3s ease;
 
   :global(html.dark) & {
     background: url("/portfolio/images/backgounds/tahoe_background_dark.webp") center / cover no-repeat;
-    //background: url("/images/backgounds/tahoe_background_dark.webp") center / cover no-repeat;
+    background: url("/images/backgounds/tahoe_background_dark.webp") center / cover no-repeat;
   }
 }
 

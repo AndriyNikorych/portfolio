@@ -4,12 +4,12 @@
   background: var(--widgetBg);
   border-radius: 20px;
   grid-column: 3 / 4;
-  grid-row: 2 / 3;
+  grid-row: 1 / 2;
   padding: 10px;
 
   &.isMobile {
     grid-column: -1 / -2;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
   }
 }
 

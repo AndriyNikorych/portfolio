@@ -7,6 +7,7 @@ import { BatteryWidget } from "@/components/Battery/BatteryWidget";
 import { Header } from "@/components/Header/Header";
 import { Clock } from "@/components/Clock/Clock";
 import { CalculatorButton } from "@/components/Calculator/CalculatorButton";
+import { TravelIcon } from "@/modules/travel/TravelIcon";
 
 const footerList = [...navigationList, ...contactList];
 
@@ -19,6 +20,7 @@ export function MacBook() {
 				<Clock />
 				<BatteryWidget />
 				<CalculatorButton />
+				<TravelIcon />
 				<FooterNavBar list={footerList} />
 			</div>
 		</div>

@@ -3,16 +3,15 @@ import "@css/main.scss";
 import { Fonts } from "@/assets/fonts";
 import { I18nInit } from "@/i18n/I18nInit";
 import { ThemeProvider } from "@/components/ThemeSelector/ThemeProvider";
-import Head from "next/head";
 import type { Metadata } from "next";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang={"en"} suppressHydrationWarning>
-			<Head>
-				<link rel="preload" as="image" href="portfolio/images/backgounds/background_day.webp" />
-				<link rel="preload" as="image" href="portfolio/images/backgounds/background_night.webp" />
-			</Head>
+			<head>
+				<link rel="preload" as="image" href="/images/backgounds/background_day.webp" />
+				<link rel="preload" as="image" href="/images/backgounds/background_night.webp" />
+			</head>
 			<body className={Fonts.variable}>
 				<I18nInit />
 				<ThemeProvider attribute="class" defaultTheme={"system"} enableSystem>

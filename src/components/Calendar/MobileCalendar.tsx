@@ -3,6 +3,7 @@ import { useMemo, useRef, useState } from "react";
 import { useLocale } from "@/i18n/i18nStore";
 import { useTranslation } from "@/i18n/useTranslation";
 import { OpenCalendarContainer } from "@/components/Calendar/OpenCalendarContainer";
+import { IconButton } from "@/components/IconButton/IconButton";
 
 export function MobileCalendar() {
 	const { fullLocale: locale } = useLocale();
@@ -22,11 +23,16 @@ export function MobileCalendar() {
 
 	return (
 		<div className={css.mobileCalendar}>
-			<button className={css.calendarBtn} onClick={onOpen} ref={openButtonRef}>
-				<div className={css.month}>{weekdayLabel}</div>
-				<div className={css.day}>{day}</div>
-			</button>
-			<div className={css.label}>{t("app.calendar")}</div>
+			<IconButton
+				icon={
+					<div className={css.calendarBtn}>
+						<div className={css.month}>{weekdayLabel}</div>
+						<div className={css.day}>{day}</div>
+					</div>
+				}
+				onClick={onOpen}
+				label={t("app.calendar")}
+			/>
 
 			{open && <OpenCalendarContainer openButtonRef={openButtonRef} onClose={() => setOpen(false)} />}
 		</div>
