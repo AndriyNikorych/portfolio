@@ -1,4 +1,5 @@
 1:"$Sreact.fragment"
 2:I[39756,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/7340adf74ff47ec0.js"],"default"]
 3:I[37457,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/7340adf74ff47ec0.js"],"default"]
-0:{"buildId":"OizT8YJpHIgXFQ1VibCS3","rsc":["$","$1","c",{"children":[null,["$","div",null,{"className":"roboto_flex_b3697305-module__DQT6ZW__variable","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]]}],"loading":null,"isPartial":false}
+:HL["/portfolio/images/travel/maldive.webp","image"]
+0:{"buildId":"1QFQxtswURBTuYeM2CzW1","rsc":["$","$1","c",{"children":[null,[["$","head",null,{"children":["$","link",null,{"rel":"preload","as":"image","href":"/portfolio/images/travel/maldive.webp"}]}],["$","div",null,{"className":"roboto_flex_b3697305-module__DQT6ZW__variable","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]]]}],"loading":null,"isPartial":false}
