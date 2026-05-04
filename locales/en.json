@@ -45,7 +45,8 @@
 	"app": {
 		"calendar": "Calendar",
 		"weather": "Weather",
-		"calculator": "Calculator"
+		"calculator": "Calculator",
+		"travel": "Paradise"
 	},
 	"header": {
 		"title": "Andrii Nikorych",

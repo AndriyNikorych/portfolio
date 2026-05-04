@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[47257,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/7340adf74ff47ec0.js"],"ClientPageRoot"]
-3:I[52683,["/portfolio/_next/static/chunks/027485e848284585.js","/portfolio/_next/static/chunks/b70edef64a25d25b.js","/portfolio/_next/static/chunks/4984599ea6ef4129.js"],"default"]
+3:I[52683,["/portfolio/_next/static/chunks/233e8621cbaacb13.js","/portfolio/_next/static/chunks/9b9f68720c6b4e1e.js","/portfolio/_next/static/chunks/a42a8cd186af39c3.js"],"default"]
 6:I[97367,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/7340adf74ff47ec0.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-:HL["/portfolio/_next/static/chunks/1e7f8bc713af14a2.css","style"]
-0:{"buildId":"qb2J_c2iyV7m_aLDsKpms","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/chunks/1e7f8bc713af14a2.css","precedence":"next"}],["$","script","script-0",{"src":"/portfolio/_next/static/chunks/b70edef64a25d25b.js","async":true}],["$","script","script-1",{"src":"/portfolio/_next/static/chunks/4984599ea6ef4129.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+:HL["/portfolio/_next/static/chunks/11404c8984c399cc.css","style"]
+0:{"buildId":"DSrGkEBIRrUX_XeYLpIFO","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/chunks/11404c8984c399cc.css","precedence":"next"}],["$","script","script-0",{"src":"/portfolio/_next/static/chunks/9b9f68720c6b4e1e.js","async":true}],["$","script","script-1",{"src":"/portfolio/_next/static/chunks/a42a8cd186af39c3.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null

@@ -44,7 +44,8 @@
 	"app": {
 		"calendar": "Календар",
 		"calculator": "Калькулятор",
-		"weather": "Погода"
+		"weather": "Погода",
+		"travel": "Подорож"
 	},
 	"header": {
 		"title": "Андрій Нікорич",
