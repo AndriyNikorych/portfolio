@@ -94,7 +94,7 @@ export function AboutPlace() {
 					</div>
 					<div className={css.photoWrapper}>
 						<Image
-							src="images/travel/maldives4.webp"
+							src="/images/travel/maldives4.webp"
 							alt="hotel"
 							width={889}
 							height={500}
