@@ -31,7 +31,7 @@ export function ThemeSelector() {
 					className={cn(css.themeSelectorItem, resolvedTheme === Theme.dark && css.active)}
 				>
 					<Image
-						src={"/portfolio/images/tahoe_background_dark_small.webp"}
+						src={"/images/tahoe_background_dark_small.webp"}
 						alt="dark theme"
 						width={100}
 						height={100}
@@ -44,7 +44,7 @@ export function ThemeSelector() {
 					className={cn(css.themeSelectorItem, resolvedTheme === Theme.light && css.active)}
 				>
 					<Image
-						src={"/portfolio/images/tahoe_background_light_small.webp"}
+						src={"/images/tahoe_background_light_small.webp"}
 						alt="light theme"
 						width={100}
 						height={100}

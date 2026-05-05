@@ -33,6 +33,7 @@
 .imageLayer {
 	position: absolute;
 	inset: 0;
+	background: url("/portfolio/images/travel/maldive.webp") center/cover no-repeat;
 	background: url("/images/travel/maldive.webp") center/cover no-repeat;
 	-webkit-mask-size: 94vw;
 	mask-size: 94vw;
@@ -52,7 +53,7 @@
 	flex-direction: column;
 	color: #fff;
 	opacity: 0;
-	background: url("/images/travel/maldive.webp") center/cover no-repeat;
+	background: url("/portfolio/images/travel/maldive.webp") center/cover no-repeat;
 }
 
 .description {
