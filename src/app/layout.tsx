@@ -31,11 +31,11 @@ export async function generateMetadata(): Promise<Metadata> {
 			template: "%s | Andrii Nikorych"
 		},
 		description: "Portfolio of Andrii Nikorych, a Front-End Developer.",
-		metadataBase: new URL("https://andriynikorych.github.io/portfolio"),
+		metadataBase: new URL("https://nikorych-portfolio.vercel.app/"),
 		openGraph: {
 			title: "Andrii Nikorych — Front-End Developer",
 			description: "Portfolio of Andrii Nikorych, a Front-End Developer.",
-			url: "https://andriynikorych.github.io/portfolio",
+			url: "https://nikorych-portfolio.vercel.app/",
 			siteName: "Andrii Nikorych Portfolio",
 			locale: "en_US",
 			type: "website"

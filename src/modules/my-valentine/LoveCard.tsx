@@ -14,7 +14,7 @@ type LoveCardProps = {
 export function LoveCard({
 	womanName,
 	manName,
-	imageSrc = "/portfolio/images/valentine-day.webp",
+	imageSrc = "/images/valentine-day.webp",
 	startingDate
 }: LoveCardProps) {
 	const [seconds, setSeconds] = useState<number | null>(null);

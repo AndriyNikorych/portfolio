@@ -55,7 +55,7 @@ export function MyValentine() {
 					<div className={css.top} ref={topRef}>
 						<div className={css.topPart} />
 						<Image
-							src={"/portfolio/images/waxSeal.webp"}
+							src={"/images/waxSeal.webp"}
 							alt={"wax seal"}
 							width={200}
 							height={160}
@@ -70,7 +70,7 @@ export function MyValentine() {
 					womanName={wName}
 					manName={mName}
 					startingDate={since}
-					imageSrc={"/portfolio/images/7E0A0384.webp"}
+					imageSrc={"/images/7E0A0384.webp"}
 				/>
 			</div>
 		</div>

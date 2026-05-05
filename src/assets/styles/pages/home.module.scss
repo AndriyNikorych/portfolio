@@ -1,13 +1,11 @@
 .root {
   :global(html.dark) & {
-    --bg: url("/portfolio/images/backgounds/background_night.webp");
     --bg: url("/images/backgounds/background_night.webp");
   }
 
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  --bg: url("/portfolio/images/backgounds/background_day.webp");
   --bg: url("/images/backgounds/background_day.webp");
   transition: background 0.5s ease;
   background: var(--bg) center / cover no-repeat;
