@@ -1,0 +1,131 @@
+//.weatherWidget {
+//  position: absolute;
+//  left: 30px;
+//  top: 30px;
+//
+//  min-width: 260px;
+//  max-width: 320px;
+//
+//  padding: 14px 14px;
+//  border-radius: 14px;
+//
+//  background: rgba(0, 0, 0, 0.35);
+//  color: var(--color4);
+//  backdrop-filter: blur(10px);
+//
+//  display: flex;
+//  flex-direction: column;
+//  gap: 12px;
+//}
+//
+//.top {
+//  display: flex;
+//  align-items: center;
+//  justify-content: space-between;
+//}
+//
+//.city {
+//  font-weight: 700;
+//}
+//
+//.icon {
+//  width: 48px;
+//  height: 48px;
+//}
+//
+//.tempRow {
+//  display: flex;
+//  gap: 12px;
+//  align-items: center;
+//}
+//
+//.temp {
+//  font-size: 48px;
+//  font-weight: 800;
+//  line-height: 1;
+//}
+//
+//.desc {
+//  display: flex;
+//  flex-direction: column;
+//  gap: 2px;
+//}
+//
+//.main {
+//  font-weight: 700;
+//}
+//
+//.sub {
+//  opacity: 0.9;
+//  font-size: 13px;
+//}
+//
+//.grid {
+//  display: grid;
+//  grid-template-columns: 1fr 1fr;
+//  gap: 10px;
+//}
+//
+//.item {
+//  padding: 10px;
+//  border-radius: 12px;
+//  background: rgba(255, 255, 255, 0.06);
+//}
+//
+//.label {
+//  opacity: 0.8;
+//  font-size: 12px;
+//}
+//
+//.value {
+//  margin-top: 4px;
+//  font-weight: 700;
+//}
+//
+
+.weatherIcon {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+
+}
+
+.weatherWidget {
+  width: 500px;
+  height: 600px;
+  background: var(--widgetBg);
+  padding: 50px 20px;
+  background: url("/images/colorful-sky-clouds.webp") center center/cover no-repeat;
+
+  .inputContainer {
+    position: relative;
+
+    &:focus-within {
+       .placeholder {
+         transform: translateY(-100%);
+       }
+    }
+  }
+
+  .placeholder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    user-select: none;
+    pointer-events: none;
+    color: var(--whiteColor);
+  }
+
+  .input {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--color3);
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--whiteColor);
+    color: var(--whiteColor);
+  }
+}

@@ -4,11 +4,9 @@
     align-items: center;
     background: var(--lg-background, rgba(255, 255, 255, 0.1));
     border-radius: var(--lg-border, 2rem);
-    overflow: hidden;
-    flex: 1 1 auto;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-    --lg-highlight: var(--color5);
+    --lg-highlight: rgba(255, 255, 255, 0.2);
 }
 
 .overlay {
@@ -22,10 +20,9 @@
 
 .liquidGlassEffect {
     position: absolute;
-    inset: 5px;
+    inset: 2px;
     border-radius: inherit;
     z-index: 2;
-    overflow: hidden;
     filter: url(#glassFilter);
     backdrop-filter: blur(3px);
 }
@@ -36,6 +33,7 @@
     display: flex;
     flex: 1 1 auto;
     align-items: center;
+    border-radius: inherit;
     justify-content: space-around;
     padding: var(--lg-padding, 12px 28px);
     gap: 1rem;

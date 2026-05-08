@@ -1,0 +1,108 @@
+  .explorer {
+    width: var(--width, max-content);
+    width: clamp(320px, var(--width, 600px), 100vw);
+    height: var(--height, max-content);
+    max-height: calc(100vh - 120px);
+    background-color: var(--color2);
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) translate(var(--x, 0), var(--y, 0));
+    z-index: 10;
+    color: var(--typeColor);
+    border-radius: 20px;
+    box-shadow:  0 0 2px 1px var(--color6);
+    transition: width 0.3s ease;
+    transform-origin: 50% 100%;
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+
+
+    &:focus-within {
+      background-color: var(--color2);
+      z-index: 11;
+    }
+
+    .content {
+      border-radius: 0 0 20px 20px;
+      height: auto;
+      overflow: auto;
+    }
+
+    .dragAndDrop {
+      width: 100%;
+      height: 35px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      grid-column: -2 / -1;
+    }
+
+    .topBar {
+      display: grid;
+      grid-template-columns: 15px 15px 15px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+      width: 100%;
+      color: #000;
+
+      &:hover {
+        .icon {
+          opacity: 1;
+        }
+      }
+
+      .close,
+      .hide,
+      .fullSize {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: var(--redColor);
+        z-index: 1;
+      }
+
+      .icon {
+        width: 15px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hide {
+        background-color: var(--yellowColor);
+
+        svg {
+          width: 15px;
+          height: 15px;
+          transform: rotate(90deg);
+        }
+      }
+
+      .fullSize {
+        background-color: var(--greenColor);
+
+        svg {
+          width: 15px;
+          height: 15px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @media (max-height: 760px) {
+    .explorer {
+      top: 5px;
+    }
+  }

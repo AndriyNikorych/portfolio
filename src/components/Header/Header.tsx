@@ -1,28 +1,24 @@
-"use client";
 import css from "@css/component/header.module.scss";
-import Link from "next/dist/client/link";
-import HomeIcon from "@/assets/svg/home.svg";
-import { Settings } from "@/components/Header/Settings";
-import { useTranslation } from "@/locale/useTranslation";
-import { NavigationItem } from "@/components/Header/NavigationItem";
-import { LiquidGlass } from "@/components/Liquid Glass";
+import AppleIcon from "@/assets/svg/apple.svg";
+import { useTranslation } from "@/i18n/useTranslation";
+import { HeaderBattery } from "@/components/Battery/HeaderBattery";
+import { TextClock } from "@/components/Clock/TextClock";
 
 export function Header() {
 	const t = useTranslation();
 
 	return (
-		<header className={css.header}>
-			<div className={css.headerContent}>
-				<nav className={css.navigation}>
-					<ul className={css.menu}>
-						<NavigationItem url={"/"} icon={<HomeIcon />} />
-						<NavigationItem url={"/about"} title={t("navigation.about")} />
-						<NavigationItem url={"/projects"} title={t("navigation.projects")} />
-						<NavigationItem url={"/contacts"} title={t("navigation.contacts")} />
-					</ul>
-				</nav>
-				<Settings />
+		<div className={css.header}>
+			<div className={css.leftBlock}>
+				<AppleIcon className={css.appleIcon} />
+				<div className={css.title}>{t("header.title")}</div>
+				<div className={css.position}>{t("header.position")}</div>
 			</div>
-		</header>
+
+			<div className={css.rightBlock}>
+				<HeaderBattery />
+				<TextClock withDate />
+			</div>
+		</div>
 	);
 }
