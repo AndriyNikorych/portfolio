@@ -3,7 +3,7 @@
 	position: relative;
 	font-family: var(--travelFontFamily);
 	user-select: none;
-	background: #fdfdf1;
+	background: #fff;
 }
 
 .stickyWrapper {
@@ -12,13 +12,18 @@
 
 .hint {
 	position: fixed;
-	bottom: 50px;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	font-size: clamp(12px, 3vi, 28px);
 	color: #dcdcdc;
 	z-index: 1000;
 	animation: hintAnimation 2.2s infinite ease-in-out;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
 }
 
 .container {
@@ -57,25 +62,72 @@
 
 .description {
 	display: flex;
-	align-items: end;
+	align-items: center;
 	flex-direction: column;
 	width: 100%;
 	padding: 50px 20px 0;
-	text-align: right;
+	text-transform: uppercase;
 }
 
 .title {
-	font-size: clamp(20px, 18vi, 120px);
-	font-weight: 900;
+	font-size: clamp(20px, 15vi, 150px);
+	font-weight: 700;
 	line-height: 1.2;
 	opacity: 0;
 }
 
 .subtitle {
-	font-size: clamp(12px, 8vi, 42px);
-	font-weight: 900;
+	font-size: clamp(12px, 2vi, 42px);
+	font-weight: 500;
 	line-height: 1.2;
+	color: rgb(255 255 255 / 0.4);
 	opacity: 0;
+}
+
+.facts {
+	min-height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-flow: dense;
+	gap: 50px 20px;
+	padding: 40px;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	> * {
+		overflow: hidden;
+	}
+
+
+	.title {
+		color: #000;
+		opacity: 1;
+		font-size: clamp(14px, 5vi, 30px);
+	}
+
+	.fact {
+		font-size: clamp(14px, 3vi, 25px);
+		color: #000;
+	}
+
+	.factsText {
+		flex-shrink: 0;
+		width: 100%;
+		padding: 20px;
+		will-change: transform, opacity;
+	}
+
+	.factImageWrapper {
+		position: relative;
+		grid-area: var(--grid);
+		border-radius: 12px;
+		overflow: hidden;
+		object-fit: cover;
+		width: 100%;
+		will-change: transform, opacity;
+
+	}
 }
 
 .cards {
@@ -219,6 +271,32 @@
 		&:hover {
 			transform: scale(1.1);
 		}
+	}
+}
+
+.whiteFrame {
+	position: absolute;
+	inset: 0;
+	background-color: #fff;
+	opacity: 0;
+	z-index: 1;
+}
+
+.videoWrapper {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	.canvasOverlay {
+		position: absolute;
+		inset: 0;
+		background-color: #fff;
+	}
+
+	.canvas {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
 	}
 }
 
