@@ -1,6 +1,6 @@
 import css from "@css/pages/iphone.module.scss";
 import { FooterNavBar } from "@/components/Macbook/components/FooterNavBar";
-import { navigationList } from "@/modules/tahoe/utils";
+import { navigationList } from "@/services/contacts";
 import { Contacts } from "@/components/Macbook/components/Contacts";
 import { MobileCalendar } from "@/components/Calendar/MobileCalendar";
 import { BatteryWidget } from "@/components/Battery/BatteryWidget";

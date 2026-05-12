@@ -1,7 +1,7 @@
 "use client";
 import css from "@css/pages/macbook.module.scss";
 import { FooterNavBar } from "@/components/Macbook/components/FooterNavBar";
-import { contactList, navigationList } from "@/modules/tahoe/utils";
+import { contactList, navigationList } from "@/services/contacts";
 import { Calendar } from "@/components/Calendar/Calendar";
 import { BatteryWidget } from "@/components/Battery/BatteryWidget";
 import { Header } from "@/components/Header/Header";
