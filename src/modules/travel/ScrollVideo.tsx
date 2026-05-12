@@ -48,7 +48,9 @@ export function VideoScrollSection() {
 			priority.forEach((i) => (images[i].src = getFrameSrc(i)));
 			images[0].onload = render;
 
-			requestIdleCallback(() => {
+			(typeof requestIdleCallback !== "undefined"
+				? requestIdleCallback
+				: (cb: IdleRequestCallback) => setTimeout(cb, 1))(() => {
 				for (let i = 0; i < FRAME_COUNT; i++) {
 					if (!priority.includes(i)) images[i].src = getFrameSrc(i);
 				}
