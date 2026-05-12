@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { LiquidGlass } from "@/components/Liquid Glass";
 import { useTranslation } from "@/i18n/useTranslation";
 import gsap from "gsap";
-import { contactList } from "@/modules/tahoe/utils";
+import { contactList } from "@/services/contacts";
 
 export function Contacts() {
 	const contactsListRef = useRef<HTMLDivElement>(null);

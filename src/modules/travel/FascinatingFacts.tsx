@@ -2,11 +2,14 @@ import css from "@/assets/styles/pages/travel.module.scss";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export function FascinatingFacts() {
 	const containerRef = useRef<HTMLDivElement>(null);
+	const media = useMediaQuery("(max-width: 700px)");
 
 	useEffect(() => {
+		if (media) return;
 		const ctx = gsap.context(() => {
 			const textBlocks = containerRef.current!.querySelectorAll<HTMLElement>(`.${css.factsText}`);
 			const imgs = containerRef.current!.querySelectorAll<HTMLElement>(`.${css.factImageWrapper}`);
@@ -58,7 +61,7 @@ export function FascinatingFacts() {
 		}, containerRef);
 
 		return () => ctx.revert();
-	}, []);
+	}, [media]);
 
 	return (
 		<div className={css.facts} ref={containerRef}>
@@ -177,7 +180,7 @@ const images = [
 		width: 1200,
 		height: 800,
 		colS: 1,
-		colE: 3,
+		colE: 2,
 		rowS: 11,
 		rowE: 12
 	},
@@ -190,5 +193,15 @@ const images = [
 		colE: 3,
 		rowS: 5,
 		rowE: 7
+	},
+	{
+		src: "/images/travel/facts/9.webp",
+		alt: "9",
+		width: 800,
+		height: 533,
+		colS: 2,
+		colE: 3,
+		rowS: 11,
+		rowE: 12
 	}
 ];

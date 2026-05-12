@@ -1,27 +1,25 @@
 import css from "@/assets/styles/pages/travel.module.scss";
-import { contactList } from "@/modules/tahoe/utils";
+import { contactList } from "@/services/contacts";
 
 export function Footer() {
 	return (
 		<div className={css.footer}>
 			<div className={css.footerContainer}>
-				<div className={css.left}>
-					<h4>Site Concept</h4>
-					<div className={css.footerText}>This is a demo layout ready for your custom content.</div>
-					<div className={css.footerText}>Andrii Nikorych © 2026</div>
-				</div>
-
-				<div className={css.right}>
-					<h4> Like what you see? Contact me:</h4>
+				<div className={css.contactInfo}>
+					<h4 className={css.contactTitle}> Like what you see? Contact me:</h4>
 
 					<div className={css.contacts}>
 						{contactList.map((item) => (
 							<div key={item.placeholder} className={css.contactItem}>
-								<div className={css.icon}>{item.item}</div>
-								<div className={css.placeholder}>{item.placeholder}</div>
+								{item.link}
 							</div>
 						))}
 					</div>
+				</div>
+
+				<div className={css.footerInfo}>
+					<h4 className={css.footerTitle}>Site Concept</h4>
+					<div className={css.footerText}>Created by: Andrii Nikorych © 2026</div>
 				</div>
 			</div>
 		</div>

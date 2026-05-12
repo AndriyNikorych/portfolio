@@ -1,7 +1,7 @@
 "use client";
 
 import css from "@/assets/styles/pages/travel.module.scss";
-import { AboutPlace } from "./AboutPlace";
+import { PhotoCards } from "./PhotoCards";
 import { Footer } from "@/modules/travel/Footer";
 import { VideoScrollSection } from "@/modules/travel/ScrollVideo";
 import { FirstFrame } from "@/modules/travel/FirstFrame";
@@ -13,7 +13,7 @@ export function Travel() {
 			<FirstFrame />
 			<FascinatingFacts />
 			<VideoScrollSection />
-			<AboutPlace />
+			<PhotoCards />
 			<Footer />
 		</section>
 	);
