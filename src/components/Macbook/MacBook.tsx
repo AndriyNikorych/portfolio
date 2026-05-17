@@ -8,10 +8,16 @@ import { Header } from "@/components/Header/Header";
 import { Clock } from "@/components/Clock/Clock";
 import { CalculatorButton } from "@/components/Calculator/CalculatorButton";
 import { TravelIcon } from "@/modules/travel/TravelIcon";
-
-const footerList = [...navigationList, ...contactList];
+import { useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 
 export function MacBook() {
+	const searchParams = useSearchParams();
+	const showContacts = searchParams.get("c");
+	const footerList = useMemo(() => {
+		return showContacts ? [...navigationList, ...contactList] : [...navigationList];
+	}, [showContacts]);
+
 	return (
 		<div className={css.root}>
 			<Header />

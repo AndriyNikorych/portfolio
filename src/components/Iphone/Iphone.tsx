@@ -8,10 +8,16 @@ import { Clock } from "@/components/Clock/Clock";
 import { MobileHeader } from "@/components/Header/MobileHeader";
 import { CalculatorButton } from "@/components/Calculator/CalculatorButton";
 import { TravelIcon } from "@/modules/travel/TravelIcon";
-
-const footerList = [...navigationList, { placeholder: "contacts", item: <Contacts /> }];
+import { useSearchParams } from "next/navigation";
 
 export function Iphone() {
+	const searchParams = useSearchParams();
+	const showContacts = searchParams.get("c");
+
+	const footerList = showContacts
+		? [...navigationList, { placeholder: "contacts", item: <Contacts /> }]
+		: [...navigationList];
+
 	return (
 		<div className={css.root}>
 			<MobileHeader />
