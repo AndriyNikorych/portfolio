@@ -4,6 +4,7 @@ import { Fonts } from "@/assets/fonts";
 import { I18nInit } from "@/i18n/I18nInit";
 import { ThemeProvider } from "@/components/ThemeSelector/ThemeProvider";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			</>
 			<body className={Fonts.variable}>
 				<I18nInit />
+				<Analytics />
 				<ThemeProvider attribute="class" defaultTheme={"system"} enableSystem>
 					<main>{children}</main>
 				</ThemeProvider>
