@@ -47,7 +47,8 @@
 		align-items: center;
 		height: 50px;
 		align-self: start;
-		width: 150px
+		width: 150px;
+		color: #fff;
 	}
 
 	.confirm {
@@ -415,6 +416,7 @@
 		height: 40px;
 		width: 100%;
 		border-radius: 16px;
+		color: #fff;
 		background: linear-gradient(180deg, oklch(0.603 0.134 160.865), #10ae2f 59.5%, #0f9d2a);
 
 		&:disabled {

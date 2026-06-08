@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useState } from "react";
+import { RefObject, useCallback, useRef } from "react";
 import { AVATARS_BY_RARITY, BoosterType, getNextRarity, rarityColor } from "@/components/PackOpening/utils";
 import gsap from "gsap";
 
@@ -10,12 +10,12 @@ type Props = {
 };
 
 export function useMergeAnimation({ itemsRef, onComplete, selectedRarity, updateIdList }: Props) {
-	const [animating, setAnimating] = useState(false);
+	const animatingRef = useRef(false);
 
 	return useCallback(() => {
-		if (!itemsRef.current || !selectedRarity || animating) return;
+		if (!itemsRef.current || !selectedRarity || animatingRef.current) return;
 
-		setAnimating(true);
+		animatingRef.current = true;
 
 		// --- Gather selected DOM elements by data-index ---
 		const selectedEls: HTMLElement[] = updateIdList
@@ -108,7 +108,7 @@ export function useMergeAnimation({ itemsRef, onComplete, selectedRarity, update
 					delay: 0.8,
 					onComplete: () => {
 						onComplete(newSrc, nextRarity);
-						setAnimating(false);
+						animatingRef.current = false;
 						overlay.remove();
 						selectedEls.forEach((el) => (el.style.opacity = ""));
 					}
@@ -194,5 +194,5 @@ export function useMergeAnimation({ itemsRef, onComplete, selectedRarity, update
 			},
 			"-=0.3"
 		);
-	}, [updateIdList, selectedRarity, animating]);
+	}, [updateIdList, selectedRarity]);
 }
