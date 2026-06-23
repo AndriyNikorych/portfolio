@@ -1,0 +1,147 @@
+.portfolio {
+  padding: 100px 20px 50px;
+}
+
+.portfolioList {
+  display: flex;
+  gap: 50px 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 0;
+}
+
+.portfolioItem {
+  display: flex;
+  gap: 10px;
+  border-radius: 36px;
+  max-width: 1000px;
+  width: 100%;
+  background-color: var(--portfolioCardBg);
+  color: var(--whiteColor);
+  cursor: pointer;
+  box-shadow: 0 0 16px 2px #2c2c2cad;
+  position: relative;
+  opacity: 0;
+  will-change: opacity;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+
+    .arrow {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+
+    .image {
+      transform: scale(1.05);
+    }
+
+    .liveDemo {
+      color: var(--whiteColor);
+
+
+      svg {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  .name {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+    white-space: pre-line;
+  }
+
+  .imageWrapper {
+    max-width: 300px;
+    width: 40%;
+    min-height: 200px;
+    border-radius: 36px 0 0 36px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+  }
+
+  .info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .description {
+    color: var(--portfolioCardSubText);
+    font-size: 14px;
+  }
+
+  .skills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--whiteColor);
+    border: 1px solid var(--borderColor);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    background-color: rgb(255 255 255 / 0.3);
+    transform: rotate(-90deg);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s;
+  }
+
+  .liveDemo {
+    display: flex;
+    gap: 10px;
+    color: var(--portfolioCardSubText);
+    transition: color 0.3s;
+
+
+    svg {
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  @media (max-width: 690px) {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+
+    .imageWrapper {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 36px 36px 0 0;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+

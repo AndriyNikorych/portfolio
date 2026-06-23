@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import css from "@css/component/clock.module.scss";
-import { useLocale } from "@/i18n/i18nStore";
+import { useLocale } from "@/i18n/i18nProvider";
 
 export function TextClock({ withDate = false }: { withDate?: boolean }) {
 	const [time, setTime] = useState(new Date());

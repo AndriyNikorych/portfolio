@@ -1,0 +1,165 @@
+.laptop, .tablet, .mobile {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --padding: clamp(10px, 2vw, 20px);
+  --borderRadius: clamp(16px, 5cqw, 32px);
+
+  .border {
+    width: calc(100% + 2px);
+    height: calc(100% - 16px);
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    border: 1px solid var(--laptopColor1);
+    background: linear-gradient(45deg, rgba(252, 252, 252, .5) 0%, var(--laptopColor2), rgb(255 255 255 / .5) 100%);
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .screenWrapper {
+    height: 100%;
+    padding: var(--padding) var(--padding) calc(var(--padding) * 2);
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    background: var(--laptopColor1);
+    box-shadow: 0 0 10px 0 var(--typeColor);
+    position: relative;
+
+    .screen {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: calc(var(--borderRadius) - var(--padding)) calc(var(--borderRadius) - var(--padding)) 0 0;
+      position: relative;
+    }
+
+    .image {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+}
+
+.laptop {
+  .screenWrapper {
+    width: calc(100% - 40px);
+    position: relative;
+    transform-origin: bottom;
+    transform: rotateX(calc(var(--rotateY) * 1deg));
+    filter: brightness(var(--brightness));
+
+    .border {
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: var(--padding);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;
+      height: calc(var(--padding) - 5px);
+      background: var(--laptopColor1);
+      border-radius: 0 0 16px 16px;
+      z-index: 1;
+    }
+  }
+
+
+  .bottomPanel {
+    width: 100%;
+    height: var(--padding);
+    border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+    background: var(--laptopColor2);
+    box-shadow: 0 0 10px 0 var(--typeColor);
+    z-index: 1;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: calc(var(--padding) / 2);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25%;
+      height: calc(var(--padding) / 2);
+      background: var(--laptopColor1);
+      opacity: 0.3;
+      border-radius: 0 0 16px 16px;
+    }
+  }
+}
+
+.tablet, .mobile {
+  max-width: 400px;
+  aspect-ratio: 4 / 6;
+  --padding: clamp(5px, 2vw, 10px);
+
+  .button, .soundUp, .soundDown {
+    position: absolute;
+    height: 10%;
+    width: 3px;
+    background: var(--laptopColor1);
+  }
+
+  .button {
+    left: -4px;
+    top: 15%;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .soundUp, .soundDown {
+    right: -4px;
+    top: 10%;
+    border-radius: 0 16px 16px 0;
+  }
+
+  .soundDown {
+    top: 21%;
+  }
+
+  .border {
+    height: calc(100% + 4px);
+    border-radius: var(--borderRadius);
+  }
+
+  .screenWrapper {
+    border-radius:  var(--borderRadius);
+    padding: var(--padding);
+
+    .screen {
+      border-radius: calc(var(--borderRadius) - var(--padding));
+    }
+  }
+}
+
+.mobile {
+  .border {
+    width: calc(100%);
+  }
+  max-width: 250px;
+  aspect-ratio: 6 / 11;
+
+  .button {
+    left: -2px;
+    top: 100px;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .soundUp, .soundDown {
+    right: -2px;
+  }
+}

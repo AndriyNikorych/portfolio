@@ -13,9 +13,8 @@
     text-shadow: 0 3px 2px var(--blackColor);
   }
 
-
   .iconWrapper {
-    background: #d4d4d2;
+    background: var(--background, #d4d4d2);
     width: var(--iconSize);
     height: var(--iconSize);
     display: flex;

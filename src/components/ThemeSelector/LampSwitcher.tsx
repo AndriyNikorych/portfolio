@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes";
-import css from "@css/pages/home.module.scss";
+import css from "@css/pages/room.module.scss";
 import Arrow from "@/assets/svg/curve-arrow.svg";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 
 export enum Theme {
 	light = "light",
@@ -18,11 +18,11 @@ export function LampSwitcher() {
 
 	return (
 		<div className={css.themeSelector}>
-			<div className={css.text}>{t("home.changeTheme")}</div>
+			<div className={css.text}>{t("room.changeTheme")}</div>
 			<div className={css.arrow}>
 				<Arrow />
 			</div>
-			<button onClick={onCLick} className={css.switcher} aria-label={t("home.changeTheme")} />
+			<button onClick={onCLick} className={css.switcher} aria-label={t("room.changeTheme")} />
 		</div>
 	);
 }

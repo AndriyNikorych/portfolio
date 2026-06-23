@@ -3,6 +3,7 @@ export const Config = {
 		macOs: "/tahoe",
 		loading: "/loading",
 		travel: "/travel",
+		room: "/room",
 		root: "/"
 	}
 };

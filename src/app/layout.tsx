@@ -1,24 +1,38 @@
 import { ReactNode } from "react";
 import "@css/main.scss";
-import { Fonts } from "@/assets/fonts";
-import { I18nInit } from "@/i18n/I18nInit";
-import { ThemeProvider } from "@/components/ThemeSelector/ThemeProvider";
+
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/components/ThemeSelector/ThemeProvider";
+import { Fonts } from "@/assets/fonts";
+import { ExplorerLayer } from "@/components/Explorer/ExplorerLayer";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
-		<html lang={"en"} suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning>
 			<head>
-				<link rel="preload" as="image" href="/images/backgounds/background_day.webp" />
-				<link rel="preload" as="image" href="/images/backgounds/background_night.webp" />
+				<title>Andrii Nikorych — Front-End Developer</title>
+				<link
+					rel="preload"
+					as="image"
+					href="/images/avatar-hero.webp"
+					type="image/webp"
+					media="(min-width: 571px)"
+				/>
+				<link
+					rel="preload"
+					as="image"
+					href="/images/avatar-hero-sm.webp"
+					type="image/webp"
+					media="(max-width: 570px)"
+				/>
 			</head>
 			<body className={Fonts.variable}>
-				<I18nInit />
-				<ThemeProvider attribute="class" defaultTheme={"system"} enableSystem>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<Analytics />
 					<main>{children}</main>
 				</ThemeProvider>
-
-				<div id="explorer-portal" />
+				<ExplorerLayer />
 			</body>
 		</html>
 	);
@@ -31,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			template: "%s | Andrii Nikorych"
 		},
 		description: "Portfolio of Andrii Nikorych, a Front-End Developer.",
-		metadataBase: new URL("https://nikorych-portfolio.vercel.app/"),
+		metadataBase: new URL("https://nikorych.dev/"),
 		openGraph: {
 			title: "Andrii Nikorych — Front-End Developer",
 			description: "Portfolio of Andrii Nikorych, a Front-End Developer.",
@@ -41,7 +55,6 @@ export async function generateMetadata(): Promise<Metadata> {
 			type: "website"
 		},
 		twitter: {
-			card: "summary_large_image",
 			title: "Andrii Nikorych — Front-End Developer",
 			description: "Portfolio of Andrii Nikorych, a Front-End Developer."
 		},

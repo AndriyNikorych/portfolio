@@ -93,7 +93,7 @@ export function LoveCard({
 			</div>
 			<div className={css.backSide}>
 				<div className={css.letterText}>
-					<p>{"You feel like home to me"}</p>
+					<p>{"You feel like Room to me"}</p>
 					<p>{`${womanName} & ${manName} - now and always`}</p>
 					{seconds && (
 						<div className={css.secondsContainer}>

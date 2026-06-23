@@ -1,7 +1,7 @@
 import css from "@css/component/calendar.module.scss";
 import cn from "classnames";
 import { RefObject, useMemo, useState } from "react";
-import { useLocale } from "@/i18n/i18nStore";
+import { useLocale } from "@/i18n/i18nProvider";
 
 type CalendarProps = {
 	value?: Date;

@@ -1,45 +1,21 @@
-import { Locale, LOCALE_ENUM, useLocale } from "@/i18n/i18nStore";
-import { useTranslation } from "@/i18n/useTranslation";
-import { ReactNode } from "react";
 import css from "@css/component/languageList.module.scss";
-import UkraineIcon from "@/assets/svg/country/uk.svg";
-import EnglishIcon from "@/assets/svg/country/en.svg";
 import cn from "classnames";
-
-type LanguageListProps = { label: string; name: string; icon: ReactNode; locale: string };
-
-const languages: Record<Locale, LanguageListProps> = {
-	[LOCALE_ENUM.UK]: {
-		label: "УКР",
-		name: "Українська",
-		icon: <UkraineIcon />,
-		locale: "lang.ukraine"
-	},
-	[LOCALE_ENUM.EN]: {
-		label: "EN",
-		name: "English",
-		icon: <EnglishIcon />,
-		locale: "lang.english"
-	}
-};
+import { useTranslation } from "@/i18n/i18nProvider";
+import { Locale, LOCALE_ENUM } from "@/i18n/config";
+import { useSwitchLanguage } from "@/components/LanguageSelector/useSwitchLanguage";
+import { languagesSelectorList } from "@/components/LanguageSelector/utils";
 
 const locales: Locale[] = [LOCALE_ENUM.UK, LOCALE_ENUM.EN];
 
 export function LanguageList() {
-	const { locale, setLocale } = useLocale();
 	const t = useTranslation();
-
-	const switchTo = (nextLocale: Locale) => {
-		if (locale === nextLocale) return;
-		void setLocale(nextLocale);
-	};
+	const { switchTo, locale } = useSwitchLanguage();
 
 	return (
 		<div className={css.language}>
-			<h1 className={css.title}>{t("settings.language")}</h1>
 			<ul className={css.languageList}>
 				{locales.map((lang) => {
-					const langItem = languages[lang];
+					const langItem = languagesSelectorList[lang];
 
 					return (
 						<li

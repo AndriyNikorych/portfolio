@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import css from "@css/component/settings.module.scss";
 import PortfolioIcon from "@/assets/svg/navigationIcons/portfolio.svg";
 import macbookCss from "@css/pages/macbook.module.scss";

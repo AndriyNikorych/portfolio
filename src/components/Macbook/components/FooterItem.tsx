@@ -1,6 +1,6 @@
 import css from "@css/pages/macbook.module.scss";
 import { ReactNode } from "react";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 
 type FooterItemProps = {
 	placeholder: string;

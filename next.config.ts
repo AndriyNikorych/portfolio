@@ -1,10 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	images: {
-		unoptimized: true
-	},
 	trailingSlash: true,
+	experimental: {
+		optimizeCss: true
+	},
+	headers: async () => [
+		{
+			source: "/:path*",
+			headers: [
+				{
+					key: "Cache-Control",
+					value: "public, max-age=0, must-revalidate"
+				}
+			]
+		}
+	],
 	turbopack: {
 		rules: {
 			"*.svg": {

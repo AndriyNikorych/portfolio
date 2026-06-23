@@ -1,7 +1,7 @@
 import WeatherIcon from "@/assets/svg/ios-weather.svg";
 import { useState } from "react";
 import css from "@css/component/weather.module.scss";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { Explorer } from "@/components/Explorer/Explorer";
 import { Weather } from "@/components/WeatherWidget/Weather";
 import { IconButton } from "@/components/IconButton/IconButton";

@@ -1,0 +1,139 @@
+.refactoringCase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 20px;
+}
+.description {
+  margin-top: 20px;
+  color: var(--muteForegound);
+  flex: 1;
+  font-size: clamp(13px, 3vw, 18px);
+}
+
+.content {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+.beforeBlock {
+  .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    background: var(--homeAlarmIconBg);
+    align-items: center;
+    justify-content: center;
+    color: var(--homeAlarmIcon);
+  }
+}
+
+.cardTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .grey {
+    color: var(--muteForegound);
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .white {
+    color: var(--bg);
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .listItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .text {
+    position: relative;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orangeColor);
+  }
+}
+
+.beforeBlock, .afterBlock {
+  width: 50%;
+  justify-content: start;
+}
+
+.afterBlock {
+  .icon {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .listItem {
+    opacity: 0;
+  }
+}
+
+.separator {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--borderColor);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(-10px);
+  z-index: 1;
+  color: var(--orangeColor);
+  box-shadow: 0 0 10px var(--borderColor2);
+  animation: separator 2s infinite;
+}
+
+@media (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .beforeBlock, .afterBlock {
+    width: 100%;
+  }
+
+  .separator {
+    display: none;
+  }
+}
+
+@keyframes separator {
+  50% {
+    transform: translate(-50%, -50%) translateX(10px);
+  }
+}
