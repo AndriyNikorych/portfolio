@@ -75,7 +75,7 @@ export function FascinatingFacts() {
 				return (
 					<Image
 						src={img.src}
-						alt={img.alt}
+						alt={"fact" + img.alt}
 						className={css.factImageWrapper}
 						width={img.width}
 						height={img.height}
@@ -104,7 +104,7 @@ const facts = [
 		text: "Unlike quartz sand, Maldivian sand is made of coral. It remains pleasantly cool to the touch, even under the intense midday sun."
 	},
 	{
-		title: "Home to Giants",
+		title: "Page to Giants",
 		text: "This is one of the few places where you can swim with the world’s largest fish—the Whale Shark. They are gentle giants that feed on plankton and are often happy to share the water with divers."
 	},
 	{

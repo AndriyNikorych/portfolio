@@ -1,6 +1,6 @@
 import Icon from "@/assets/svg/travel/travel-icon.svg";
 import { IconButton } from "@/components/IconButton/IconButton";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { Config } from "@/utilities/config";
 import { useRouter } from "next/navigation";
 

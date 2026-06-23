@@ -3,9 +3,16 @@
 		"dark": "dark",
 		"light": "light",
 		"noData": "No data",
-		"workInProgress": "Work in progress..."
+		"workInProgress": "Work in progress...",
+		"before": "Before",
+		"after": "After",
+		"client": "Client",
+		"performance": "Performance",
+		"accessibility": "Accessibility",
+		"seo": "SEO",
+		"bestPractices": "Best Practices"
 	},
-	"home": {
+	"room": {
 		"title": "Andrii Nikorych",
 		"name": "Andrii",
 		"surname": "Nikorych",
@@ -13,6 +20,74 @@
 		"description": "Front-End Developer",
 		"changeTheme": "Tap here",
 		"continue": "Click on the screen"
+	},
+	"home": {
+		"hello": "Hello, I`m ",
+		"name": " Andrii",
+		"position": "Front-End Developer",
+		"services": "What I Do:",
+		"experience": "Years of experience",
+		"availability": "Available for select projects",
+		"excellence": "Technical Excellence",
+		"excellenceText": "Clean, modular architecture with cross-browser perfection and bulletproof technical SEO implemented at the core.",
+		"premiumUI": "Premium UI/UX Animations",
+		"premiumUIText": "Custom GSAP (ScrollTrigger, Timeline) for smooth, non-intrusive interactions that guide attention.",
+		"performance": "High-Performance Frontend",
+		"performanceText": "Fast, SEO-optimized React and Next.js applications powered by SSR, ISR, and smart API handling for instant loading times.",
+		"scroll": "Scroll to explore work",
+		"toolkit": "Toolkit",
+		"skills1": "Bringing ideas to life:",
+		"skills2": "expertise sharpened on live projects.",
+		"skillsDescription": "A tech stack blending performance and quality to create that seamless, intuitive user experience.",
+
+		"refactoringCaseSection": "refactoring",
+		"refactoringCaseTitle": "Refactoring Case",
+		"refactoringCaseSubTitle": "Legacy to Next.js.",
+		"refactoringCaseDescription": "A complete codebase overhaul — turning a slow, brittle legacy app into a fast, modern, search-engine-friendly product.",
+
+		"beforeTitle": "Legacy Application",
+		"beforeList1": "Slow initial load times",
+		"beforeList2": "No preloading for critical elements",
+		"beforeList3": "Outdated React class architecture",
+		"beforeList4": "Heavy, unoptimized font rendering",
+		"beforeList5": "Basic technical SEO structure",
+
+		"afterTitle": "Modern Next.js Architecture",
+		"afterList1": "Automated Image Optimization using Next/Image",
+		"afterList2": "Preloaded critical assets and fonts for instant LCP",
+		"afterList3": "Modern Functional Components with clean React Hooks",
+		"afterList4": "Seamless SSR & ISR for lightning-fast page loading",
+		"afterList5": "Advanced technical SEO with full semantic structure",
+
+		"expertiseTitle": "Senior-level expertise",
+		"expertiseArchitecture": "Scalable Architecture & State",
+		"expertiseArchitectureDescription": "Designing clean, maintainable frontend structures using modern state management and modular patterns for complex web applications.",
+		"expertiseAnimations": "High-End Motion & Interaction",
+		"expertiseAnimationsDescription": "Production-grade GSAP and ScrollTrigger architectures that drive engagement without sacrificing performance or frame rates.",
+		"expertisePerformance": "Performance & Technical SEO",
+		"expertisePerformanceDescription": "Deep auditing and optimization yielding 100/100 Lighthouse scores through advanced image strategy, code-splitting, and critical-path rendering.",
+
+		"developmentProcessSection": "Development Process",
+		"developmentProcessTitle1": "From idea",
+		"developmentProcessTitle2": "To real product",
+
+		"performanceTitle": "All greens. Every build.",
+
+		"clientsTask": "Create a minimalist and clean Landing Page to showcase a premium wireless speaker and its features. \n The focus should be on clean typography, premium visuals, and plenty of whitespace to engage users.",
+		"devText": "Got it! \n I will focus on pixel-perfect implementation, fully optimized premium visuals, and a flawless responsive layout across all devices.",
+		"clientsReaction": "Exceeded our expectations! Fast, responsive, and beautifully animated. Will definitely work together again.",
+
+		"step": "Step ",
+		"stepTitle1": "Project brief & technical requirements",
+		"stepSubtitle1": "Deep discovery — goals, audience, constraints, success metrics. We agree on scope before a single line of code.",
+		"stepTitle2": "Architecture & UI implementation",
+		"stepSubtitle2": "Component-driven build with a clean, scalable architecture and pixel-precise UI from your designs.",
+		"stepTitle3": "Integrating wow-effect custom animations",
+		"stepSubtitle3": "Cinematic motion, scroll-driven storytelling, and micro-interactions that make the product feel alive.",
+		"stepTitle4": "Performance optimization",
+		"stepSubtitle4": "Lighthouse 100s Fine-tuning the code for maximum speed. This includes fast image loading, code-splitting, and modern SSR/ISR setups.",
+		"stepTitle5": "Testing & delivery",
+		"stepSubtitle5": "Cross-browser testing, performance audits, and a smooth project handover to ensure you are 100% satisfied with the final result."
 	},
 	"footer": {
 		"telegram": "Join to my Telegram",
@@ -46,10 +121,34 @@
 		"calendar": "Calendar",
 		"weather": "Weather",
 		"calculator": "Calculator",
+		"settings": "Settings",
 		"travel": "Paradise"
 	},
 	"header": {
 		"title": "Andrii Nikorych",
 		"position": "Front-End Developer"
+	},
+	"portfolio": {
+		"sectionTitle": "Portfolio",
+		"title": "Here you can find",
+		"subTitle": "my work and projects",
+		"liveDemo": "Live Demo",
+
+		"officeRoom": {
+			"title": "Immersive Web Experience \n Apple OS Replica",
+			"description": "A website with a cinematic scene where an immersive transition takes you from a simple room straight into a fully interactive copy of the Apple operating system. It features a parallax effect to create a striking 3D sense of depth and fluid movement."
+		},
+		"travel": {
+			"title": "Cinematic Web Experience \n GSAP Animation & Performance",
+			"description": "A premium, cinematic landing page that combines dynamic parallax, background video, and smooth GSAP animations for immersive storytelling. Thanks to lightweight code optimization, the site loads instantly, capturing maximum user attention and making your brand stand out."
+		},
+		"kickstarter": {
+			"title": "Futuristic Wireless Speaker \n Landing Page",
+			"description": "Minimalist landing page for a futuristic wireless speaker, designed to present hardware features through clean typography and high-end product imagery. Structured with intuitive feature grids and optimized media blocks, it ensures a seamless user experience that elevates brand aesthetics and drives high engagement."
+		},
+		"miami": {
+			"title": "Miami \n Landing Page",
+			"description": "A landing page for a Miami-based company that showcases their brand, services, and contact information. The design is modern and minimal, with a focus on typography and imagery."
+		}
 	}
 }

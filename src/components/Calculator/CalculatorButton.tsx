@@ -3,7 +3,7 @@ import css from "@/assets/styles/component/calculator.module.scss";
 import { useRef, useState } from "react";
 import { Explorer } from "@/components/Explorer/Explorer";
 import { Calculator } from "@/components/Calculator/Calculator";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { IconButton } from "@/components/IconButton/IconButton";
 
 export function CalculatorButton() {

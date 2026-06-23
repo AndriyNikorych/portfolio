@@ -11,7 +11,7 @@ type LiquidGlassType = {
 
 export function LiquidGlass({ classes, children, scale = 150, seed = 5 }: LiquidGlassType) {
 	return (
-		<div className={cn(css.liquidGlassWrapper, classes?.root)}>
+		<div className={cn(classes?.root, css.liquidGlassWrapper)}>
 			<div className={cn(css.liquidGlassEffect, classes?.effect)} />
 			<div className={cn(css.overlay, classes?.overlay)} />
 			<div className={cn(css.glassContent, classes?.glassContent)}>{children}</div>

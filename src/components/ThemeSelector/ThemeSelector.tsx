@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import css from "@/assets/styles/component/themeSelector.module.scss";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { Theme } from "@/components/ThemeSelector/LampSwitcher";
 import { Image } from "next/dist/client/image-component";
 import cn from "classnames";
@@ -24,7 +24,7 @@ export function ThemeSelector() {
 
 	return (
 		<div className={css.themeSelector}>
-			<h1 className={css.title}>{t("settings.theme")}</h1>
+			<h5 className={css.title}>{t("settings.theme")}</h5>
 			<ul className={css.themeSelectorList}>
 				<li
 					onClick={onClickDark}

@@ -2,7 +2,7 @@ import ContactsIcon from "@/assets/svg/navigationIcons/apple-phone.svg";
 import css from "@css/component/contacts.module.scss";
 import { useRef } from "react";
 import { LiquidGlass } from "@/components/Liquid Glass";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import gsap from "gsap";
 import { contactList } from "@/services/contacts";
 

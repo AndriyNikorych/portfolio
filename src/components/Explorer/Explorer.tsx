@@ -13,6 +13,7 @@ type ExplorerType = {
 	children: ReactNode;
 	id: string;
 	withFullWidth?: boolean;
+	skipAnimation?: boolean;
 	maxContentWidth?: boolean;
 	classes?: {
 		root?: string;
@@ -27,7 +28,8 @@ export function Explorer({
 	id,
 	children,
 	withFullWidth,
-	maxContentWidth
+	maxContentWidth,
+	skipAnimation
 }: ExplorerType) {
 	return usePortal(
 		<ExplorerContent
@@ -38,6 +40,7 @@ export function Explorer({
 			classes={classes}
 			withFullWidth={withFullWidth}
 			maxContentWidth={maxContentWidth}
+			skipAnimation={skipAnimation}
 		/>
 	);
 }
@@ -49,7 +52,8 @@ function ExplorerContent({
 	id,
 	classes,
 	withFullWidth = true,
-	maxContentWidth = false
+	maxContentWidth = false,
+	skipAnimation = false
 }: ExplorerType) {
 	const ref = useRef<HTMLDivElement>(null);
 	const [fullSize, setFullSize] = useState(false);
@@ -71,6 +75,18 @@ function ExplorerContent({
 		if (!el || !iconEl) {
 			return;
 		}
+
+		if (skipAnimation) {
+			gsap.set(el, { x: 0, y: 0, scale: 1, opacity: 1 });
+			timeline.current = gsap.timeline({ ease: "power3.inOut" });
+			return;
+		}
+
+		if (!iconEl) {
+			gsap.set(el, { x: 0, y: 0, scale: 1, opacity: 1 });
+			return;
+		}
+
 		const winRect = el.getBoundingClientRect();
 		const iconRect = iconEl.getBoundingClientRect();
 

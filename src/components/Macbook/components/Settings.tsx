@@ -1,30 +1,33 @@
 import SettingsIcon from "@/assets/svg/navigationIcons/settings.svg";
-import macbookCss from "@css/pages/macbook.module.scss";
 import css from "@css/component/settings.module.scss";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Explorer } from "@/components/Explorer/Explorer";
 import { ThemeSelector } from "@/components/ThemeSelector/ThemeSelector";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { LanguageList } from "@/components/LanguageSelector/LanguageList";
 import { useRouter } from "next/navigation";
 import { Config } from "@/utilities/config";
+import { closeExplorer, openExplorer, useExplorerOpen } from "@/stores/explorerStore";
+import { IconButton } from "@/components/IconButton/IconButton";
 
 export function Settings() {
-	const [open, setOpen] = useState(false);
+	const open = useExplorerOpen("settings");
 	const iconRef = useRef<HTMLDivElement>(null);
 	const router = useRouter();
+	const wasOpenOnMount = useRef(open);
 
 	const onClickBack = () => {
-		setOpen(false);
-		router.push(Config.navigationScheme.root);
+		closeExplorer("settings");
+		router.push(Config.navigationScheme.room);
 	};
 
 	const onClose = () => {
-		setOpen(false);
+		closeExplorer("settings");
+		wasOpenOnMount.current = false;
 	};
 
 	const onOpen = () => {
-		setOpen(true);
+		openExplorer("settings");
 
 		if (open) {
 			document.getElementById("settings")?.focus();
@@ -35,23 +38,32 @@ export function Settings() {
 
 	return (
 		<div className={css.settings}>
-			<div className={css.iconButton} onClick={onOpen} ref={iconRef}>
-				<SettingsIcon className={macbookCss.icon} />
-			</div>
+			<IconButton
+				icon={<SettingsIcon className={css.icon} ref={iconRef} />}
+				onClick={onOpen}
+				className={css.iconButton}
+				label={t("app.settings")}
+			/>
 
 			{open && (
-				<Explorer onClose={onClose} iconRef={iconRef} id="settings">
+				<Explorer
+					onClose={onClose}
+					iconRef={iconRef}
+					id="settings"
+					skipAnimation={wasOpenOnMount.current}
+				>
 					<div className={css.content}>
 						<header className={css.header}>
 							<SettingsIcon />
-							<h1 className={css.title}>{t("settings.title")}</h1>
-							<h2 className={css.description}>{t("settings.description")}</h2>
+							<h3 className={css.title}>{t("settings.title")}</h3>
+							<h5 className={css.description}>{t("settings.description")}</h5>
 						</header>
 
 						<div className={css.block}>
 							<ThemeSelector />
 						</div>
 						<div className={css.block}>
+							<h5 className={css.title}>{t("settings.language")}</h5>
 							<LanguageList />
 						</div>
 

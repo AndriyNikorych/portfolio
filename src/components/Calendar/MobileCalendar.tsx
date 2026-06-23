@@ -1,7 +1,7 @@
 import css from "@css/component/calendar.module.scss";
 import { useMemo, useRef, useState } from "react";
-import { useLocale } from "@/i18n/i18nStore";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useLocale } from "@/i18n/i18nProvider";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { OpenCalendarContainer } from "@/components/Calendar/OpenCalendarContainer";
 import { IconButton } from "@/components/IconButton/IconButton";
 

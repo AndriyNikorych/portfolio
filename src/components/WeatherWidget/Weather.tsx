@@ -1,5 +1,5 @@
 import css from "@css/component/weather.module.scss";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { useState } from "react";
 
 export function Weather() {

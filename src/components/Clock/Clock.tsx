@@ -1,14 +1,15 @@
 import css from "@css/component/clock.module.scss";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import cn from "classnames";
 
 const numbers = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
 
 export function Clock({ isMobile = false }: { isMobile?: boolean }) {
-	const date = useMemo(() => new Date(), []);
-	const hours = date.getHours();
-	const minutes = date.getMinutes();
-	const seconds = date.getSeconds();
+	const [date, setDate] = useState<Date | null>(null);
+	useEffect(() => setDate(new Date()), []);
+	const hours = date?.getHours() ?? 0;
+	const minutes = date?.getMinutes() ?? 0;
+	const seconds = date?.getSeconds() ?? 0;
 
 	return (
 		<div className={cn(css.clockContainer, { [css.isMobile]: isMobile })}>

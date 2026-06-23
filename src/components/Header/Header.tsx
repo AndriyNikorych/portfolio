@@ -1,6 +1,6 @@
 import css from "@css/component/header.module.scss";
 import AppleIcon from "@/assets/svg/apple.svg";
-import { useTranslation } from "@/i18n/useTranslation";
+import { useTranslation } from "@/i18n/i18nProvider";
 import { HeaderBattery } from "@/components/Battery/HeaderBattery";
 import { TextClock } from "@/components/Clock/TextClock";
 

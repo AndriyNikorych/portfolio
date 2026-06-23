@@ -34,3 +34,34 @@
   }
 }
 
+.switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 3px;
+  border: 1px solid var(--borderColor);
+  position: relative;
+
+  &:hover {
+    border-color: var(--orangeColor);
+  }
+
+  .icon {
+    position: absolute;
+  }
+
+  & .active{
+      transform: scale(0);
+
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+

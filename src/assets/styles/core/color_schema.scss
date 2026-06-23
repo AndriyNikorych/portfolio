@@ -9,17 +9,31 @@
   --color8: #007aff;
   --color9: #ff3333;
   --color10: rgba(251, 143, 40, 0.6);
-
   --batteryColor: #fff;
   --widgetBg: rgba(20, 20, 20, 0.7);
-
-  --typeColor: #fff;
+  --typeColor: #f3f1ee;
   --redColor: #ff5c5f;
   --yellowColor: #fac800;
   --greenColor:#34c759;
   --whiteColor:#fff;
   --blackColor:#000;
   --greyColor: #6c6c6c;
+
+
+  --portfolioCardBg: #1e293b;
+  --portfolioCardSubText: #ffffff99;
+  --borderColor: rgb(255 255 255 / 0.26);
+  --borderColor2: rgb(255 255 255 / 0.16);
+  --orangeColor: #FF9639FF;
+  --orangeSoft: #ffdcbd;
+  --gradientOrange: linear-gradient(to bottom right in oklab, #f3f1ee 0%, #f3f1ee 50%, #ff9639 100%);
+  --mixBg: #161b23;
+  --muteForegound: #b6becb;
+  --gradientBackground: radial-gradient(circle,rgba(246, 140, 54, 1) 0%, #f3f1ee 66%);
+  --reverseTypoColor: #07090ed9;
+  --homeAlarmIconBg: #e7000b;
+  --laptopColor1: #E1DDD7FF;
+  --laptopColor2: #f2f0ec;
 }
 
 html.light {
@@ -27,7 +41,6 @@ html.light {
   --color2: #eaeaea;
   --color3: #777777;
   --color4: #EFE9E3;
-
   --color5: rgba(0, 0, 0, 0.2);
   --color6: rgba(135, 135, 135, 0.5);
   --color7: rgba(255, 255, 255, 0.5);
@@ -35,6 +48,17 @@ html.light {
   --color9: #ff1313;
   --color10: #ff8913;
 
+  --homeAlarmIcon: #e7000b;
+  --homeAlarmIconBg: #e7000b1a;
+  --reverseTypoColor:#fbfaf7d9;
+  --gradientBackground: radial-gradient(circle,rgba(246, 140, 54, 1) 0%, rgba(11, 13, 18, 1) 66%);
   --widgetBg: rgba(227, 227, 227, 0.9);
   --typeColor: #000;
+  --borderColor: #E1DDD7FF;
+  --borderColor2: rgb(0 0 0 / 0.16);
+  --muteForegound: lab(28.0014% -.778109 -7.34472);
+  --mixBg: color-mix(in oklab, #fff 95%, transparent);
+  --laptopColor1: #07090ed9;
+  --laptopColor2: rgb(47 51 58 / 0.85);
+  --gradientOrange: linear-gradient(to bottom right in oklab, lab(3.67543% -.212148 -2.43837) 0%, lab(3.67543% -.212148 -2.43837) 50%, lab(69.0195% 37.0844 61.0352) 100%)
 }
